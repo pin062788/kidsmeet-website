@@ -30,7 +30,8 @@ gem 'bson_ext'
 gem 'slim-rails'
 
 group :test do
-  gem "rspec-rails"
+  gem 'rspec-rails'
+  gem 'cucumber-rails', :require => false
 end
 
 # Use ActiveModel has_secure_password
