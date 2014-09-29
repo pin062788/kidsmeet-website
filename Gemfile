@@ -29,6 +29,10 @@ gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'slim-rails'
 
+group :test do
+  gem "rspec-rails"
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
