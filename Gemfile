@@ -29,7 +29,8 @@ gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'slim-rails'
 
-group :test do
+group :development, :test do
+  gem 'byebug',     :platform => :ruby_20
   gem 'rspec-rails'
   gem 'cucumber-rails', :require => false
   gem 'guard-rspec'
