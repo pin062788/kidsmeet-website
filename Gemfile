@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'slim-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug',     :platform => :ruby_20
