@@ -1,33 +1,34 @@
-h1 Listing events
+- @events.each do |event|
+  .row.activity
+    .col-md-4
+      a
+        img.img-responsive src="#{event.main_image_url}" alt="test"
 
-table
-  thead
-    tr
-      th Title
-      th Category
-      th Abstract
-      th Content
-      th Main image url
-      th Apply end date
-      th Apply number limitation
-      th
-      th
-      th
+    div.col-md-5.summary
+      = link_to event.title, event, { class: 'title'}
+      /h3.title #{event.title}
 
-  tbody
-    - @events.each do |event|
-      tr
-        td = event.title
-        td = event.category
-        td = event.abstract
-        td = event.content
-        td = event.main_image_url
-        td = event.apply_end_date
-        td = event.apply_number_limitation
-        td = link_to 'Show', event
-        td = link_to 'Edit', edit_event_path(event)
-        td = link_to 'Destroy', event, data: {:confirm => 'Are you sure?'}, :method => :delete
+      .detail-box
 
-br
+        .detail-link-apply-info
+          span.label.label-primary 亲子出游
 
-= link_to 'New Event', new_event_path
+        .detail-link-apply-info
+          span.label.label-danger  活动日期：#{event.apply_end_date}
+
+        .detail-link-apply-info
+          .label.label-success 火热报名中
+
+        .detail-link-apply-info
+          span
+            i.fa.fa-male
+            span.badge  8
+            span  |
+            i.fa.fa-child
+            span.badge  4
+
+
+
+      .clearfix
+
+      pre.abstract #{event.abstract}
