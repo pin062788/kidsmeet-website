@@ -29,6 +29,8 @@ gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
 gem 'bson_ext'
 gem 'slim-rails'
 gem 'font-awesome-rails'
+gem 'kaminari', '~> 0.16.1'
+
 
 group :development, :test do
   gem 'byebug',     :platform => :ruby_20
