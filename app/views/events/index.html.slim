@@ -2,7 +2,7 @@
   .row.activity
     .col-md-4
       a
-        img.img-responsive src="#{event.main_image_url}" alt="test"
+        = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "聚宝盆亲子活动俱乐部"
 
     div.col-md-5.summary
       = link_to event.title.html_safe, event, { class: 'title'}
