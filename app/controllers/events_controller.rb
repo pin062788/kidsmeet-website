@@ -11,6 +11,8 @@ class EventsController < ApplicationController
   # GET /events/1
   # GET /events/1.json
   def show
+    #require 'byebug'; debugger
+    #render 'events/show.external.html.slim' unless @event.external_article_url.nil?
   end
 
   # GET /events/new

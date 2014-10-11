@@ -1,27 +1,17 @@
 p#notice = notice
 
 p
-  strong Title:
-  = @event.title
-p
-  strong Category:
-  = @event.category
-p
-  strong Abstract:
-  = @event.abstract
-p
-  strong Content:
-  = @event.content
-p
-  strong Main image url:
-  = @event.main_image_url
-p
-  strong Apply end date:
+  strong
   = @event.apply_end_date
 p
-  strong Apply number limitation:
-  = @event.apply_number_limitation
-
-= link_to 'Edit', edit_event_path(@event)
-'|
-= link_to 'Back', events_path
+  strong
+  = @event.title.html_safe
+p
+  strong
+  = @event.category.html_safe
+p
+  strong
+  = @event.abstract.html_safe
+p
+  strong
+  = @event.content.html_safe
