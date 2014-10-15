@@ -1,0 +1,29 @@
+<VirtualHost *:80>
+    ServerName kidsmeet.cn
+    ServerAlias www.kidsmeet.cn
+    RailsEnv production
+    PassengerRuby /opt/ruby_wrapper.sh
+    PassengerMinInstances 2
+    PassengerMaxPoolSize 6
+    TraceEnable off	
+
+    DocumentRoot /var/www/kidsmeet.cn/public 
+
+    <Directory /var/www/kidsmeet.cn/public>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride None
+        Order allow,deny
+        allow from all
+    </Directory>
+
+  ErrorLog /var/log/kidsmeet/error.log
+
+  # Possible values include: debug, info, notice, warn, error, crit,
+  # alert, emerg.
+  LogLevel warn
+
+  LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-agent}i\" \"%{Host}i\" \"%{X-Forwarded-For}i\" %D" kidsmeet-log
+
+  CustomLog /var/log/kidsmeet/access.log kidsmeet-log
+
+</VirtualHost>
