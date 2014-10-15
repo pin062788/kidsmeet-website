@@ -1,0 +1,16 @@
+/usr/local/bin/ruby -r ./siteconf20141014-27934-lh7to4.rb extconf.rb 
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling byebug.c
+compiling breakpoint.c
+compiling locker.c
+compiling context.c
+compiling threads.c
+linking shared-object byebug/byebug.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 byebug.so ./.gem.20141014-27934-27f2pl/byebug
+installing default byebug libraries

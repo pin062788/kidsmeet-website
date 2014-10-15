@@ -1,0 +1,13 @@
+/usr/local/bin/ruby -r ./siteconf20141014-27934-1uiks50.rb extconf.rb 
+checking for main() in -lc... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling gherkin_lexer_zh_tw.c
+linking shared-object gherkin_lexer_zh_tw.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 gherkin_lexer_zh_tw.so ./.gem.20141014-27934-ghmzri
+installing default gherkin_lexer_zh_tw libraries

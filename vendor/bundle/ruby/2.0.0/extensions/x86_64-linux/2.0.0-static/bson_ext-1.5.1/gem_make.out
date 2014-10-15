@@ -1,0 +1,31 @@
+/usr/local/bin/ruby -r ./siteconf20141014-27934-99xb88.rb extconf.rb 
+checking for asprintf()... yes
+checking for ruby/st.h... yes
+checking for ruby/regex.h... yes
+checking for ruby/encoding.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling bson_buffer.c
+compiling encoding_helpers.c
+compiling cbson.c
+cbson.c: In function 'write_utf8':
+cbson.c:119:36: warning: pointer targets in passing argument 1 of 'check_string' differ in signedness [-Wpointer-sign]
+encoding_helpers.h:26:10: note: expected 'const unsigned char *' but argument is of type 'char *'
+cbson.c: In function 'write_element':
+cbson.c:303:20: warning: unused variable 'values' [-Wunused-variable]
+cbson.c:439:17: warning: ISO C90 forbids mixed declarations and code [-Wdeclaration-after-statement]
+cbson.c: In function 'write_doc':
+cbson.c:602:5: warning: implicit declaration of function 'bson_buffer_get_max_size' [-Wimplicit-function-declaration]
+cbson.c: In function 'objectid_generate':
+cbson.c:905:9: warning: implicit declaration of function 'htonl' [-Wimplicit-function-declaration]
+cbson.c:913:5: warning: implicit declaration of function 'htons' [-Wimplicit-function-declaration]
+cbson.c: In function 'write_element':
+cbson.c:318:17: warning: ignoring return value of 'asprintf', declared with attribute warn_unused_result [-Wunused-result]
+linking shared-object bson_ext/cbson.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cbson.so ./.gem.20141014-27934-16gsv6m/bson_ext
+installing default cbson libraries
