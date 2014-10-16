@@ -2,7 +2,7 @@
     ServerName kidsmeet.cn
     ServerAlias www.kidsmeet.cn
     RailsEnv production
-    PassengerRuby /opt/ruby_wrapper.sh
+    PassengerRuby /opt/config/kidsmeet/ruby_wrapper.sh
     PassengerMinInstances 2
     PassengerMaxPoolSize 6
     TraceEnable off	
