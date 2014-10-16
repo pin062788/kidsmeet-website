@@ -1,17 +1,48 @@
-p#notice = notice
+.row
+  .activity-detail.col-md-8
 
-p
-  strong
-  = @event.apply_end_date
-p
-  strong
-  = @event.title.html_safe
-p
-  strong
-  = @event.category.html_safe
-p
-  strong
-  = @event.abstract.html_safe
-p
-  strong
-  = @event.content.html_safe
+    p#notice = notice
+
+    .title =@event.title.html_safe
+
+    = image_tag "#{@event.main_image_url}", :class => "img-responsive"
+
+    .info-box
+      //.item
+      //   span.label.label-primary #{@event.category}
+      /
+      /.item
+      /   span.label.label-danger  报名截止日期：#{@event.apply_end_date}
+
+      .item
+          span.label.label-warning  活动时间：#{@event.apply_end_date}
+
+      .item
+          span.label.label-info  活动地点：大寨路与恒大城西侧中航华府步行街
+
+      .item
+        span.label.label-success
+          span 报名情况：
+          i.fa.fa-male
+          span.badge 8
+          span.separator |
+          i.fa.fa-child
+          span.badge 4
+          span.separator |
+          i.fa.fa-cny
+          span.badge 10
+
+    .clearfix
+
+    /hr
+
+
+
+    .abstract
+      = @event.abstract.html_safe
+
+    .content
+      = @event.content.html_safe
+
+  .applicant-list.col-md-4
+

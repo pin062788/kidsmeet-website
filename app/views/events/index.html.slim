@@ -1,34 +1,35 @@
-- @events.each do |event|
-  .row.activity
-    .col-md-4
-      a
-        = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "聚宝盆亲子活动俱乐部"
+.activity-list
+  - @events.each do |event|
+    .row.activity
+      .col-md-4
+        a
+          = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "聚宝盆亲子活动俱乐部"
 
-    div.col-md-5.summary
-      = link_to event.title.html_safe, event, { class: 'title'}
+      div.col-md-5.summary
+        = link_to event.title.html_safe, event, { class: 'title'}
 
-      .detail-box
+        .info-box
+          .item
+            span.label.label-primary #{event.category}
 
-        .detail-link-apply-info
-          span.label.label-primary #{event.category}
-
-        .detail-link-apply-info
-          span.label.label-danger  报名截止日期：#{event.apply_end_date}
+          .item
+            span.label.label-danger  报名截止：#{event.apply_end_date}
 
 
-        .detail-link-apply-info
-          span
-            i.fa.fa-male
-            span.badge  8
-            span  |
-            i.fa.fa-child
-            span.badge  4
-            span  |
-            i.fa.fa-cny
-            span.badge  10
+          .item
+            span.label.label-info
+              span 报名统计：
+              i.fa.fa-male
+              span.badge 8
+              span.separator |
+              i.fa.fa-child
+              span.badge 4
+              span.separator |
+              i.fa.fa-cny
+              span.badge 10
 
-      .clearfix
+        .clearfix
 
-      pre.abstract #{event.abstract.html_safe}
+        pre.abstract #{event.abstract.html_safe}
 
 = paginate @events
