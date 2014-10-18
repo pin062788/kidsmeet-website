@@ -4,6 +4,12 @@
 * Clean Precompile assets and regenerate
     RAILS_ENV=production rake assets:clean assets:precompile
 
+* Execute in dev|production machine
+    bundle package
+
+* Execute in production environment
+    bundle install --deployment
+
 * Create User for kidsmeets
     db.addUser('rouser','rouser',true)
     db.addUser('rwuser','rwuser')
