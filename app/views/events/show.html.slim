@@ -8,21 +8,22 @@
     = image_tag "#{@event.main_image_url}", :class => "img-responsive"
 
     .info-box
-      //.item
-      //   span.label.label-primary #{@event.category}
-      /
-      /.item
-      /   span.label.label-danger  报名截止日期：#{@event.apply_end_date}
+      .item
+         span.label.label-primary #{@event.category}
 
       .item
-          span.label.label-success  活动地点：大寨路与恒大城西侧中航华府步行街
+          span.label.label-success  活动地点：#{@event.address}
 
       .item
-          span.label.label-warning  活动时间：#{@event.apply_end_date}
+          span.label.label-warning  活动时间：#{@event.duration}
+
+      - if @event.restrict.apply_end_date
+        .item
+           span.label.label-danger  报名截止：#{@event.restrict.apply_end_date}
 
       .item
         span.label.label-info
-          span 报名统计：
+          span 报名情况：
           i.fa.fa-male
           span.badge 8
           span.separator |
@@ -33,10 +34,6 @@
           span.badge 10
 
     .clearfix
-
-    /hr
-
-
 
     .abstract
       = @event.abstract.html_safe
