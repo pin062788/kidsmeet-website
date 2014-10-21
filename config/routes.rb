@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
   resources :events
-  resources :products
+  get 'upcomings', to: 'events#upcomings'
+  get 'history', to: 'events#history'
 
+  #resources :products
   root 'events#index'
-
+  #get ':controller(/:action(/:id(.:format)))'
+  #match "/activity", :to => 'events#upcomings'
+  #match "/history", :to => 'events#history'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

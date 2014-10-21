@@ -4,8 +4,17 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    #@events = Event.all
-    @events = Event.all.page params[:page]
+    @events = Event.all.order_by(:created_at => 'desc').page params[:page]
+  end
+
+  def upcomings
+    @events = Event.where(:expired_at.gte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    render :template => "events/index", :events => @events
+  end
+
+  def history
+    @events = Event.where(:expired_at.lte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    render :template => "events/index", :events => @events
   end
 
   # GET /events/1
@@ -72,6 +81,6 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :category, :abstract, :content, :main_image_url, :apply_end_date, :apply_number_limitation)
+      params.require(:event).permit(:title, :category, :abstract, :content, :main_image_url)
     end
 end
