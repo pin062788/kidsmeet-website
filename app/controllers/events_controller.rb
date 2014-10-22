@@ -9,11 +9,13 @@ class EventsController < ApplicationController
 
   def upcomings
     @events = Event.where(:expired_at.gte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @menu_item = 'upcomings'
     render :template => "events/index", :events => @events
   end
 
   def history
     @events = Event.where(:expired_at.lte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @menu_item = 'history'
     render :template => "events/index", :events => @events
   end
 
