@@ -31,4 +31,8 @@ class Event
   def is_expired?
     expired_at < Time.now
   end
+
+  def detail_image_url
+    main_image_url.gsub('medium','original')
+  end
 end
