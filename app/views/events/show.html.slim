@@ -1,45 +1,81 @@
-.row
-  .activity-detail.col-md-8
+.row.activity-detail
 
-    p#notice = notice
+  .title =@event.title.html_safe
 
-    .title =@event.title.html_safe
+  .info-box
+    .item
+       span.label.label-default #{@event.category}
 
-    = image_tag "#{@event.main_image_url}", :class => "img-responsive"
+    .item
+        span.label.label-success  活动地点：#{@event.address}
 
-    .info-box
+    .item
+        span.label.label-warning  活动时间：#{@event.duration}
+
+    - if @event.restrict.apply_end_date
       .item
-         span.label.label-primary #{@event.category}
+         span.label.label-default  报名截止：#{@event.restrict.apply_end_date}
 
-      .item
-          span.label.label-success  活动地点：#{@event.address}
+    .item
+      span.label.label-info
+        span 报名情况：
+        i.fa.fa-male
+        span.badge 8
+        span.separator |
+        i.fa.fa-child
+        span.badge 4
+        span.separator |
+        i.fa.fa-cny
+        span.badge 10
 
-      .item
-          span.label.label-warning  活动时间：#{@event.duration}
+  .clearfix
 
-      - if @event.restrict.apply_end_date
-        .item
-           span.label.label-danger  报名截止：#{@event.restrict.apply_end_date}
-
-      .item
-        span.label.label-info
-          span 报名情况：
-          i.fa.fa-male
-          span.badge 8
-          span.separator |
-          i.fa.fa-child
-          span.badge 4
-          span.separator |
-          i.fa.fa-cny
-          span.badge 10
-
-    .clearfix
+  .col-md-9
 
     .abstract
       = @event.abstract.html_safe
 
+    = image_tag "#{@event.detail_image_url}", :class => "img-responsive"
+
     .content
       = @event.content.html_safe
 
-  .applicant-list.col-md-4
+  .right-box.col-md-3
+    .panel.panel-primary
+      form
+        .form-group
+          label for="name" 姓名*
+          input type="text" class="form-control" id="name" placeholder="请输入您的真实姓名"
 
+        .form-group
+          label for="mobile" 手机号*
+          input type="text" class="form-control" id="mobile" placeholder="手机号将作为登陆账号"
+
+        .form-group
+          label for="email" 电子邮箱*
+          input type="text" class="form-control" id="email" placeholder="通知会发送邮件"
+
+        .form-group
+          label for="number_adult" 成人数量
+          select.form-control id="number_adult"
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+
+
+        .form-group
+          label for="number_children" 儿童数量
+          select.form-control id="number_children"
+            option 0
+            option 1
+            option 2
+            option 3
+            option 4
+
+        button type="submit" class="btn btn-primary btn-lg btn-block" 立刻报名
+
+    .panel.panel-primary
+      .panel-heading 游伴们
+      .panel-body

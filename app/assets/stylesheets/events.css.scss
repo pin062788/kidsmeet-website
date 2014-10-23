@@ -94,6 +94,7 @@ pre {
 
 .activity-detail .info-box {
   float: left;
+  margin-left: 15px;
   margin-top: 15px;
   margin-bottom: 0px;
 }
@@ -127,6 +128,7 @@ pre {
 }
 
 .activity-detail .title {
+  margin-left: 15px;
   margin-top: 10px;
   margin-bottom: 5px;
   position: relative;
@@ -205,11 +207,47 @@ pre {
 
 
 
-.applicant-list {
-  border-width: 1px;
-  border-radius: 3px;
-  border-style: double;
+.rside-bar {
+//  border-width: 1px;
+//  border-radius: 3px;
+//  border-style: double;
 }
+
+@media screen and (max-width: 768px){
+.activity-detail .right-box {
+  padding: 15px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+}
+
+.activity-detail .right-box {
+  position: relative;
+  padding: 10px 0px 0px;
+}
+
+.activity-detail .right-box .panel {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.activity-detail .right-box .form-control {
+  font-size: 12px;
+}
+
+.form-group label{
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: #2c3e50;
+}
+
+.btn-primary {
+  color: #ffffff;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+
 
 .sidebar {
   height: 1000px;
