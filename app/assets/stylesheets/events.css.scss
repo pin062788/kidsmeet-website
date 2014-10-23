@@ -64,7 +64,7 @@ pre {
 }
 
 .activity-list .activity .summary .title {
-  margin-top: 12px;
+  margin-top: 5px;
   margin-bottom: 10px;
   position: relative;
   font-size: 18px;
@@ -89,7 +89,7 @@ pre {
   overflow: hidden;
   text-overflow: ellipsis;
   color: #777;
-  border: 0px;
+  border: 1px;
 }
 
 .activity-detail .info-box {
@@ -209,4 +209,10 @@ pre {
   border-width: 1px;
   border-radius: 3px;
   border-style: double;
+}
+
+.sidebar {
+  height: 1000px;
+  border-width: 1px;
+  border-style: solid;
 }

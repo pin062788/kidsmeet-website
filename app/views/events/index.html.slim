@@ -1,38 +1,44 @@
-.activity-list
-  - @events.each do |event|
-    .row.activity
-      .col-md-4
-        a
-          = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "聚宝盆亲子活动俱乐部"
+.row
+  .col-md-9
+    .activity-list
+      - @events.each do |event|
+        .row.activity
+          .col-md-4
+            a
+              = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "咖萌亲子活动俱乐部"
 
-      div.col-md-5.summary
-        = link_to event.title.html_safe, event, { class: 'title'}
+          .col-md-8.summary
+            = link_to event.title.html_safe, event, { class: 'title'}
 
-        .info-box
-          .item
-            span.label.label-primary #{event.category}
+            .info-box
+              .item
+                span.label.label-primary #{event.category}
 
-          - if event.restrict.nil?
-            .item
-              span.label.label-danger  火热报名中
-          - else
-            .item
-              span.label.label-danger  报名截止：#{event.restrict.apply_end_date}
+              - if event.restrict.nil?
+                .item
+                  span.label.label-danger  火热报名中
+              - else
+                .item
+                  span.label.label-danger  报名截止：#{event.restrict.apply_end_date}
 
-          .item
-            span.label.label-info
-              span 报名统计：
-              i.fa.fa-male
-              span.badge 8
-              span.separator |
-              i.fa.fa-child
-              span.badge 4
-              span.separator |
-              i.fa.fa-cny
-              span.badge 10
+              .item
+                span.label.label-info
+                  span 报名统计：
+                  i.fa.fa-male
+                  span.badge 8
+                  span.separator |
+                  i.fa.fa-child
+                  span.badge 4
+                  span.separator |
+                  i.fa.fa-cny
+                  span.badge 10
 
-        .clearfix
+            .clearfix
 
-        pre.abstract #{event.abstract.html_safe}
+            pre.abstract #{event.abstract.html_safe}
+
+  .col-md-3.sidebar
+
+
 
 = paginate @events
