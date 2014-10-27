@@ -51,17 +51,21 @@ class UsersController < ApplicationController
     end
   end
 
-  def register
+  def join
     respond_to do |format|
-      if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
-        format.json { render :show, status: :ok, location: @user }
-      else
-        format.html { render :edit }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
-    end
+        @event = Event.find(params[:event_id])
+        @user.events << @event
 
+        @event.users << @user
+
+        if @user.save && @event.save
+          format.html { redirect_to @event, notice: 'You joined the event successfully.' }
+          format.json { render :show, status: :ok, location: @event }
+        else
+          format.html { render "join the event error" }
+          format.json { render json: @user.errors, status: :unprocessable_entity }
+        end
+    end
   end
 
   # DELETE /users/1
@@ -80,7 +84,9 @@ class UsersController < ApplicationController
       @user = User.find(params[:id])
     end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
+
+
+  # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:username, :email, :phone_number)
     end

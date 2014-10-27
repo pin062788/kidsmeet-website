@@ -18,7 +18,12 @@ class Event
   embeds_one :restrict
   accepts_nested_attributes_for :restrict
 
-  has_and_belongs_to_many :users
+  has_many :attendances
+
+  def users
+    User.in(id: attendances.map(&:user_id))
+  end
+
 
   validates :title, presence: true
   validates :category, presence: true

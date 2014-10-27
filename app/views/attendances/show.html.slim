@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Children number:
+  = @attendance.children_number
+p
+  strong Adults number:
+  = @attendance.adults_number
+
+= link_to 'Edit', edit_attendance_path(@attendance)
+'|
+= link_to 'Back', attendances_path

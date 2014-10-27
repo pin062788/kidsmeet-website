@@ -9,15 +9,20 @@ class User
   field :phone_number, type: String
   field :description, type: String
 
-  has_and_belongs_to_many :events
+  has_many :attendances
 
-  has_and_belongs_to_many :followers,
-                          class_name: "User",
-                          inverse_of: :following
+  def events
+    Event.in(id: attendances.map(&:event_id))
+  end
 
-  has_and_belongs_to_many :followings,
-                          class_name: "User",
-                          inverse_of: :followers
+
+  #has_and_belongs_to_many :followers,
+  #                        class_name: "User",
+  #                        inverse_of: :following
+  #
+  #has_and_belongs_to_many :followings,
+  #                        class_name: "User",
+  #                        inverse_of: :followers
 
 
   validates :username, presence: true

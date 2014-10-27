@@ -1,0 +1,15 @@
+= form_for @attendance do |f|
+  - if @attendance.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@attendance.errors.count, "error")} prohibited this attendance from being saved:"
+      ul
+        - @attendance.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :children_number
+    = f.text_field :children_number
+  .field
+    = f.label :adults_number
+    = f.text_field :adults_number
+  .actions = f.submit 'Save'
