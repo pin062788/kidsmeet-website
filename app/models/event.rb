@@ -18,6 +18,8 @@ class Event
   embeds_one :restrict
   accepts_nested_attributes_for :restrict
 
+  has_and_belongs_to_many :users
+
   validates :title, presence: true
   validates :category, presence: true
   validates :abstract, presence: true

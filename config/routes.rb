@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :users
+
   resources :events
   get 'upcomings', to: 'events#upcomings'
   get 'history', to: 'events#history'
