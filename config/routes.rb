@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :events
   get 'upcomings', to: 'events#upcomings'
   get 'history', to: 'events#history'
+  post 'attendances /join', to: 'attendances#join'
 
   #resources :products
   root 'events#index'

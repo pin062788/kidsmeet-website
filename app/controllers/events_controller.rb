@@ -25,6 +25,8 @@ class EventsController < ApplicationController
     #require 'byebug'; debugger
     #require 'debugger'; debugger
     #render 'events/show.external.html.slim' unless @event.external_article_url.nil?
+    @attendance = Attendance.new
+
   end
 
   # GET /events/new

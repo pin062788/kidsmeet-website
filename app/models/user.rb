@@ -26,7 +26,7 @@ class User
 
 
   validates :username, presence: true
-  validates_uniqueness_of :phone_number, :email, :allow_blank => true
+  validates_uniqueness_of :phone_number, :allow_blank => false
   validates :email, presence: true
   validates :phone_number, presence: true
 

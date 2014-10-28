@@ -23,19 +23,45 @@ class AttendancesController < ApplicationController
 
   # POST /attendances
   # POST /attendances.json
-  def create
-    @attendance = Attendance.new(attendance_params)
+  def join
+      @attendance = Attendance.new(attendance_params)
 
-    respond_to do |format|
-      if @attendance.save
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully created.' }
-        format.json { render :show, status: :created, location: @attendance }
-      else
-        format.html { render :new }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
+    begin
+
+      raise ArgumentError if params[:attendance][:phone_number].empty? ||
+                             params[:attendance][:email].empty? ||
+                             params[:attendance][:username].empty?
+
+      user =  attendance_user
+      event = attendance_event
+
+      if event.users.include?(user)
+        respond_to do |format|
+            format.html { redirect_to event, notice: '感谢您的支持，您已经报名过了哦！' }
+        end
+        return
       end
+
+      respond_to do |format|
+        @attendance.user = user
+        @attendance.event = event
+        if @attendance.save
+          format.html { redirect_to attendance_event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
+          format.json { render :show, status: :created, location: attendance_event }
+        else
+          format.html { render :new }
+          format.json { render json: @attendance.errors, status: :unprocessable_entity }
+        end
+      end
+    rescue
+      #Log the error
+      respond_to do |format|
+        format.html { redirect_to attendance_event }
+      end
+      return
     end
-  end
+
+    end
 
   # PATCH/PUT /attendances/1
   # PATCH/PUT /attendances/1.json
@@ -70,5 +96,20 @@ class AttendancesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
       params.require(:attendance).permit(:children_number, :adults_number)
+    end
+
+    def attendance_user
+      user = User.find_by(:phone_number => params[:attendance][:phone_number])
+      if user.nil?
+        user = User.new({:username=>params[:attendance][:username],
+                         :email => params[:attendance][:email],
+                         :phone_number => params[:attendance][:phone_number]})
+        user.save
+      end
+      user
+    end
+
+    def attendance_event
+      Event.find(params[:attendance][:event_id])
     end
 end
