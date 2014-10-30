@@ -123,7 +123,18 @@ pre {
 }
 
 
-.activity-detail {
+.activity-detail .btn-primary {
+  color: #ffffff;
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+}
+
+.activity-detail .btn-primary:hover,
+.activity-detail .btn-primary:focus,
+.activity-detail .btn-primary.active {
+  color: #ffffff;
+  background-color: #3498db;;
+  border-color: #3498db;
 
 }
 
@@ -221,6 +232,13 @@ pre {
 }
 }
 
+
+.activity-detail .right-box .panel-heading{
+  background-color: #18bc9c;
+  border-color: #18bc9c;
+  font-weight: bold;
+}
+
 .activity-detail .right-box {
   position: relative;
   padding: 10px 0px 0px;
@@ -255,8 +273,19 @@ pre {
   border-style: solid;
 }
 
+
+.panel-body{
+  padding: 5px 5px 5px 15px;
+}
+
 .user-row {
-  margin-bottom: 10px;
+  margin-bottom: 5px;
+  border-width: 0px;
+  border-style: inset;
+  border-bottom-width: 1px;
+  padding-bottom: 5px;
+  margin-right: 0px;
+
 }
 
 .user-row .user-row-avatar  {
@@ -264,7 +293,7 @@ pre {
 }
 
 .user-row .user-row-info{
-  margin-top: 5px;
+  margin-top: 10px;
   padding-left: 15px;
   font-size: 12px;
 }
