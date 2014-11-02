@@ -28,6 +28,14 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+  .right-box,
+  .activity-detail .right-box {
+    padding: 15px;
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
 }
 
 
@@ -214,22 +222,6 @@ pre {
 
 .activity-detail .content p{
   font-size: 15px;
-}
-
-
-
-.rside-bar {
-//  border-width: 1px;
-//  border-radius: 3px;
-//  border-style: double;
-}
-
-@media screen and (max-width: 768px){
-.activity-detail .right-box {
-  padding: 15px;
-  margin-right: 20px;
-  margin-left: 20px;
-}
 }
 
 

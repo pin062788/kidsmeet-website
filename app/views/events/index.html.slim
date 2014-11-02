@@ -14,6 +14,9 @@
               .item
                 span.label.label-primary #{event.category}
 
+              .item
+                span.label.label-warning  活动时间：#{event.duration}
+
               - if event.restrict.nil?
                 .item
                   span.label.label-danger  火热报名中
