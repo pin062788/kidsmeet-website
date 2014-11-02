@@ -27,13 +27,11 @@
       span.label.label-info
         span 报名情况：
         i.fa.fa-male
-        span.badge 8
+        span.badge #{@event.adults_number}
         span.separator |
         i.fa.fa-child
-        span.badge 4
+        span.badge #{@event.children_number}
         span.separator |
-        i.fa.fa-cny
-        span.badge 10
 
   .clearfix
 
@@ -69,7 +67,6 @@
           .form-group
             label for="adults_number" 成人数量
             select.form-control id="adults_number" name="attendance[adults_number]"
-              option 0
               option 1
               option 2
               option 3
@@ -80,7 +77,6 @@
           .form-group
             label for="children_number" 儿童数量
             select.form-control id="children_number" name="attendance[children_number]"
-              /option 0
               option 1
               option 2
               option 3
@@ -91,25 +87,13 @@
     .panel.panel-primary
       .panel-heading 游伴们
       .panel-body
-        .row.user-row
-          .col-xs-2.user-row-avatar
-            img src="/assets/avatar_placeholder.jpg"
-          .col-xs-10.user-row-info
-            strong 王磊
-            br
-              span.text-muted 两名成人，1名儿童参加
-          hr
-        .row.user-row
-          .col-xs-2.user-row-avatar
-            img src="/assets/avatar_placeholder.jpg"
-          .col-xs-10.user-row-info
-            strong 陈卿
-            br
-              span.text-muted 两名成人，1名儿童参加
-        .row.user-row
-          .col-xs-2.user-row-avatar
-            img src="/assets/avatar_placeholder.jpg"
-          .col-xs-10.user-row-info
-            strong 任晓军
-            br
-              span.text-muted 1名成人，1名儿童参加
+        - @event.attendances.each do |attendance|
+
+          .row.user-row
+            .col-xs-2.user-row-avatar
+              img src="/assets/avatar_placeholder.jpg"
+            .col-xs-10.user-row-info
+              strong #{attendance.user.username}
+              br
+                span.text-muted #{attendance.adults_number}名成人，#{attendance.children_number}名儿童参加
+            hr

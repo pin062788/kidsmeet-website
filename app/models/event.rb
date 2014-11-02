@@ -24,6 +24,18 @@ class Event
     User.in(id: attendances.map(&:user_id))
   end
 
+  def adults_number
+    attendances.inject(0) { |result, item|
+      result + item.adults_number
+    }
+  end
+
+  def children_number
+    attendances.inject(0) { |result, item|
+      result + item.children_number
+    }
+  end
+
 
   validates :title, presence: true
   validates :category, presence: true
