@@ -21,5 +21,9 @@ class Event < ActiveRecord::Base
     main_image_url.gsub('medium','large')
   end
 
+  def users
+    #User.in(id: attendances.map(&:user_id))
+  end
+
 
 end

@@ -10,13 +10,16 @@
   .title =@event.title.html_safe
 
   .info-box
-    .item
-       span.label.label-default #{@event.category}
 
-    .item
-        span.label.label-warning  活动时间：#{@event.duration}
+    - if @event.category
+      .item
+         span.label.label-default #{@event.category}
 
-    - if @event.apply_end_date
+    - if @event.duration
+      .item
+          span.label.label-warning  活动时间：#{@event.duration}
+
+    - unless @event.apply_end_date.blank?
       .item
          span.label.label-default  报名截止：#{@event.apply_end_date}
 

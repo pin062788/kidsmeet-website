@@ -35,12 +35,12 @@ class AttendancesController < ApplicationController
       user =  attendance_user
       event = attendance_event
 
-      if event.users.include?(user)
-        respond_to do |format|
-            format.html { redirect_to event, notice: '感谢您的支持，您已经报名过了哦！' }
-        end
-        return
-      end
+      #if event.users.include?(user)
+      #  respond_to do |format|
+      #      format.html { redirect_to event, notice: '感谢您的支持，您已经报名过了哦！' }
+      #  end
+      #  return
+      #end
 
       respond_to do |format|
         @attendance.user = user
@@ -95,7 +95,7 @@ class AttendancesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def attendance_params
-      params.require(:attendance).permit(:children_number, :adults_number)
+      params.require(:attendance).permit(:username, :phone_number, :email, :children_number, :adults_number)
     end
 
     def attendance_user

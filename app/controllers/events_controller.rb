@@ -5,7 +5,6 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.all.page params[:page]
-    #.order_by(:created_at => 'desc').page params[:page]
   end
 
   def upcomings
