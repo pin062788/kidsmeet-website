@@ -18,7 +18,7 @@ class Event < ActiveRecord::Base
   end
 
   def detail_image_url
-    main_image_url.gsub('medium','original')
+    main_image_url.gsub('medium','large')
   end
 
 

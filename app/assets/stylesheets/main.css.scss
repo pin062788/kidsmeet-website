@@ -37,10 +37,11 @@ hr.star-light,
 hr.star-primary {
     margin: 25px auto 30px;
     padding: 0;
-    max-width: 250px;
+    max-width: 100%;
     border: 0;
     border-top: solid 5px;
     text-align: center;
+    border-color: #18bc9c;
 }
 
 hr.star-light:after,
@@ -52,6 +53,7 @@ hr.star-primary:after {
     padding: 0 .25em;
     font-family: FontAwesome;
     font-size: 2em;
+    background-color: #18bc9c;
 }
 
 hr.star-light {
@@ -64,11 +66,11 @@ hr.star-light:after {
 }
 
 hr.star-primary {
-    border-color: #2c3e50;
+    border-color: #18bc9c;
 }
 
 hr.star-primary:after {
-    color: #2c3e50;
+    color: #18bc9c;
     background-color: #fff;
 }
 
