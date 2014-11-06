@@ -49,9 +49,9 @@ test: &test
 #
 production:
   <<: *default
-  database: kidsmeet
-  username: root
-  password:
+  database: <%= ENV['KIDSMEET_DB_NAME'] %>
+  username: <%= ENV['KIDSMEET_DB_USERNAME'] %>
+  password: <%= ENV['KIDSMEET_DB_PASSWORD'] %>
 
 cucumber:
   <<: *test
