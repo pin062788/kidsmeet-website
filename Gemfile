@@ -26,8 +26,9 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # Add specific gems for the project
-gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
-gem 'bson_ext'
+#gem 'mongoid', '~> 4', git: 'git://github.com/mongoid/mongoid.git'
+#gem 'bson_ext'
+gem 'mysql2'
 gem 'slim-rails'
 gem 'font-awesome-rails'
 gem 'kaminari', '~> 0.16.1'

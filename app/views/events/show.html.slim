@@ -14,14 +14,11 @@
        span.label.label-default #{@event.category}
 
     .item
-        span.label.label-success  活动地点：#{@event.address}
-
-    .item
         span.label.label-warning  活动时间：#{@event.duration}
 
-    - if @event.restrict.apply_end_date
+    - if @event.apply_end_date
       .item
-         span.label.label-default  报名截止：#{@event.restrict.apply_end_date}
+         span.label.label-default  报名截止：#{@event.apply_end_date}
 
     .item
       span.label.label-info

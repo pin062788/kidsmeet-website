@@ -4,17 +4,20 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.order_by(:created_at => 'desc').page params[:page]
+    @events = Event.all.page params[:page]
+    #.order_by(:created_at => 'desc').page params[:page]
   end
 
   def upcomings
-    @events = Event.where(:expired_at.gte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @events = Event.all.page params[:page]
+    #where(:expired_at.gte => Time.now).order_by(:created_at => 'desc').page params[:page]
     @menu_item = 'upcomings'
     render :template => "events/index", :events => @events
   end
 
   def history
-    @events = Event.where(:expired_at.lte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @events = Event.all.page params[:page]
+    #.where(:expired_at.lte => Time.now).order_by(:created_at => 'desc').page params[:page]
     @menu_item = 'history'
     render :template => "events/index", :events => @events
   end

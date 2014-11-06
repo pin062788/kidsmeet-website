@@ -17,12 +17,8 @@
               .item
                 span.label.label-warning  活动时间：#{event.duration}
 
-              - if event.restrict.nil?
-                .item
-                  span.label.label-danger  火热报名中
-              - else
-                .item
-                  span.label.label-danger  报名截止：#{event.restrict.apply_end_date}
+              .item
+                span.label.label-danger  报名截止：#{event.apply_end_date}
 
               .item
                 span.label.label-info
@@ -41,7 +37,5 @@
             pre.abstract #{event.abstract.html_safe}
 
   .col-md-3.sidebar
-
-
 
 = paginate @events
