@@ -7,6 +7,8 @@
 		sudo apt-get install apache2 curl git build-essential zlibc zlib1g-dev zlib1g libcurl4-openssl-dev libssl-dev libopenssl-ruby apache2-prefork-dev libapr1-dev libaprutil1-dev libreadline6 libreadline6-dev ImageMagick
 		sudo apt-get install build-essential libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison
 		sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties
+		sudo apt-get install mysql-server mysql-client libapache2-mod-auth-mysql libmysql-ruby
+		sudo mysqladmin -u root -h localhost password 'mypassword'
     
 
 * Setup Ruby
@@ -69,3 +71,8 @@
 		sudo cp /tmp/apache-passenger-virtualhost-trial/config/kidsmeets.cn.conf .
 		sudo a2ensite kidsmeet.cn
 		sudo service apache2 restart
+
+* Setup mysql database
+
+        RAILS_ENV=production bundle exec rake db:create
+        RAILS_ENV=production bundle exec rake db:migrate
