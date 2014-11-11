@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   post 'attendances /join', to: 'attendances#join'
 
   #resources :products
-  root 'events#index'
+  root 'events#upcomings'
   #get ':controller(/:action(/:id(.:format)))'
   #match "/activity", :to => 'events#upcomings'
   #match "/history", :to => 'events#history'
