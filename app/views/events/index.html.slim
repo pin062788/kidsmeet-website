@@ -19,9 +19,9 @@
                 .item
                   span.label.label-warning  活动时间：#{event.duration}
 
-              - unless event.apply_end_date.blank?
+              - unless event.end_time.blank?
                 .item
-                  span.label.label-danger  报名截止：#{event.apply_end_date}
+                  span.label.label-danger  报名截止：#{l event.end_time, :format => :date_format}
 
               .item
                 span.label.label-info
