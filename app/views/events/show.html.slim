@@ -17,11 +17,11 @@
 
     - if @event.duration
       .item
-          span.label.label-warning  活动时间：#{@event.duration}
+          span.label.label-warning  活动时间：#{l @event.end_time, :format => :date_format}
 
     - unless @event.end_time.blank?
       .item
-         span.label.label-default  报名截止：#{l @event.end_time, :format => :date_format}
+         span.label.label-default  报名截止：#{l @event.end_time - 1.day, :format => :date_format}
 
     .item
       span.label.label-info

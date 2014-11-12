@@ -35,13 +35,6 @@ class AttendancesController < ApplicationController
       user =  attendance_user
       event = attendance_event
 
-      #if event.users.include?(user)
-      #  respond_to do |format|
-      #      format.html { redirect_to event, notice: '感谢您的支持，您已经报名过了哦！' }
-      #  end
-      #  return
-      #end
-
       respond_to do |format|
         @attendance.user = user
         @attendance.event = event
