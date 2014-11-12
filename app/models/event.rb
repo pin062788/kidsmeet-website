@@ -21,6 +21,11 @@ class Event < ActiveRecord::Base
     main_image_url.gsub('medium','large')
   end
 
+  def mail_image_url
+    main_image_url.gsub('medium','wechat')
+  end
+
+
   def users
     #User.in(id: attendances.map(&:user_id))
   end

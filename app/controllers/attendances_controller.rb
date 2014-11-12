@@ -39,6 +39,7 @@ class AttendancesController < ApplicationController
         @attendance.user = user
         @attendance.event = event
         if @attendance.save
+          AttendanceMailer.send_email(@attendance).deliver!
           format.html { redirect_to attendance_event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
           format.json { render :show, status: :created, location: attendance_event }
         else
