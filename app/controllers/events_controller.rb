@@ -8,15 +8,13 @@ class EventsController < ApplicationController
   end
 
   def upcomings
-    @events = Event.all.page params[:page]
-    #where(:expired_at.gte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
     @menu_item = 'upcomings'
     render :template => "events/index", :events => @events
   end
 
   def history
-    @events = Event.all.page params[:page]
-    #.where(:expired_at.lte => Time.now).order_by(:created_at => 'desc').page params[:page]
+    @events = Event.where("end_time < ?", Time.new).order('created_at DESC').page params[:page]
     @menu_item = 'history'
     render :template => "events/index", :events => @events
   end
