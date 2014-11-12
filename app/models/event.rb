@@ -14,7 +14,7 @@ class Event < ActiveRecord::Base
   end
 
   def is_expired?
-    false
+    end_time < Time.new
   end
 
   def detail_image_url
