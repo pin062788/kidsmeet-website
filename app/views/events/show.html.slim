@@ -33,6 +33,10 @@
         span.badge #{@event.children_number}
         span.separator |
 
+    - if @event.contact_phone
+      .item
+         span.label.label-danger 联系电话：#{@event.contact_phone}
+
   .clearfix
 
   .col-md-9
