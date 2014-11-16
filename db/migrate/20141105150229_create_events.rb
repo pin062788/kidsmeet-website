@@ -8,6 +8,7 @@ class CreateEvents < ActiveRecord::Migration
       t.string :main_image_url
       t.datetime :start_time
       t.datetime :end_time
+      t.contact_phone :string
       t.string :duration
       t.string :address
       t.boolean :is_published

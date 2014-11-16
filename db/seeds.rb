@@ -138,6 +138,7 @@
 <p><span style="color:rgb(89, 89, 89)"><span style="color:rgb(227, 108, 9)"><img alt="" src="http://mmbiz.qpic.cn/mmbiz/w1JazHIsxYvgdRDvvgyOP2Fnusqh1de05s419qserav78OvKibF26LLI2nEoK7tjVLCaMSkWDU5ljNgpcgdUycg/640?tp=webp" /></span></span></p>
 ''',
     main_image_url: 'http://kidmeets-images.qiniudn.com/25/medium_img_20130713_123357.jpg',
+    contact_phone: '15389041528',
     start_time: '2014-11-29 00:00:00'.to_datetime,
     end_time: '2014-11-30 00:00:00'.to_datetime)
 
