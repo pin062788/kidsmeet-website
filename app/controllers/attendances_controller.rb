@@ -39,7 +39,11 @@ class AttendancesController < ApplicationController
         @attendance.user = user
         @attendance.event = event
         if @attendance.save
-          AttendanceMailer.send_email(@attendance).deliver!
+          if ENV['BACKGROUND_PROCESS']
+            AttendanceMailer.delay_for(5.second).send_email(@attendance.id)
+          else
+            AttendanceMailer.send_email(@attendance.id).deliver!
+          end
           format.html { redirect_to attendance_event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
           format.json { render :show, status: :created, location: attendance_event }
         else
@@ -47,8 +51,9 @@ class AttendancesController < ApplicationController
           format.json { render json: @attendance.errors, status: :unprocessable_entity }
         end
       end
-    rescue
+    rescue Exception => e
       #Log the error
+      logger.fatal e
       respond_to do |format|
         format.html { redirect_to attendance_event }
       end
