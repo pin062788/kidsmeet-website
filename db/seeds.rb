@@ -134,8 +134,6 @@
 <p><span style="color:rgb(227, 108, 9)">活动报名：www.kidsmeet.cn</span></p>
 
 <p><span style="color:rgb(89, 89, 89)"><span style="color:rgb(227, 108, 9)">客服微信：咖萌亲子</span></span></p>
-
-<p><span style="color:rgb(89, 89, 89)"><span style="color:rgb(227, 108, 9)"><img alt="" src="http://mmbiz.qpic.cn/mmbiz/w1JazHIsxYvgdRDvvgyOP2Fnusqh1de05s419qserav78OvKibF26LLI2nEoK7tjVLCaMSkWDU5ljNgpcgdUycg/640?tp=webp" /></span></span></p>
 ''',
     main_image_url: 'http://kidmeets-images.qiniudn.com/25/medium_img_20130713_123357.jpg',
     contact_phone: '15389041528',
