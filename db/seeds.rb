@@ -139,7 +139,7 @@
 ''',
     main_image_url: 'http://kidmeets-images.qiniudn.com/25/medium_img_20130713_123357.jpg',
     contact_phone: '15389041528',
-    start_time: '2014-11-29 00:00:00'.to_datetime,
-    end_time: '2014-11-30 00:00:00'.to_datetime)
+    start_time: '2014-11-1 00:00:00'.to_datetime,
+    end_time: '2014-11-5 00:00:00'.to_datetime)
 
 
