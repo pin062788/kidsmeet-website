@@ -31,8 +31,6 @@ ActiveRecord::Schema.define(version: 20141105164017) do
     t.string   "abstract"
     t.text     "content"
     t.string   "main_image_url"
-    t.date     "apply_end_date"
-    t.datetime "expired_at"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "contact_phone"
