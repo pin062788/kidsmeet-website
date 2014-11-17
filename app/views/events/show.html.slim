@@ -35,7 +35,8 @@
 
     - if @event.contact_phone
       .item
-         span.label.label-danger 联系电话：#{@event.contact_phone}
+         span.label.label-danger
+           a#contact-phone href="tel:#{@event.contact_phone}" 联系电话:#{@event.contact_phone}
 
   .clearfix
 
