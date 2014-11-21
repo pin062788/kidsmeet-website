@@ -23,10 +23,13 @@ class EventsController < ApplicationController
   # GET /events/1.json
   def show
     #require 'byebug'; debugger
-    #require 'debugger'; debugger
-    #render 'events/show.external.html.slim' unless @event.external_article_url.nil?
     @attendance = Attendance.new
 
+    respond_to do |format|
+        format.html
+        format.xls {response.headers['Content-Disposition'] = "attachment; filename=\"#{@event.title}.xls\"" }
+        format.json { render :show, status: :created, location: @event }
+    end
   end
 
   # GET /events/new
@@ -88,4 +91,6 @@ class EventsController < ApplicationController
     def event_params
       params.require(:event).permit(:title, :category,:contact_phone, :abstract, :content, :main_image_url)
     end
+
+
 end

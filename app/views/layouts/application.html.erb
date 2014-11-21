@@ -34,6 +34,6 @@
     <%= render("shared/about") %>
     <%= render("shared/footer") %>
     <!-- /.container -->
-
+    <%= debug(params) if Rails.env.development? %>
 </body>
 </html>
