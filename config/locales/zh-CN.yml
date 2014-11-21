@@ -40,4 +40,5 @@ zh-CN:
   time:
     formats:
       date_format: "%Y-%m-%d"
+      time_format: "'%Y-%m-%d %H:%M:%S"
 
