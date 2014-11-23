@@ -1,1 +1,2 @@
-json.extract! @event, :id, :title, :category, :abstract, :content, :main_image_url, :apply_end_date, :apply_number_limitation, :created_at, :updated_at
+json.extract! @event, :id, :agent, :title, :category, :abstract, :content,
+                      :main_image_url, :start_time, :end_time, :contact_phone, :duration, :address
