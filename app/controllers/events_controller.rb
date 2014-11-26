@@ -10,7 +10,12 @@ class EventsController < ApplicationController
   def upcomings
     @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
     @menu_item = 'upcomings'
-    render :template => "events/index", :events => @events
+
+    respond_to do |format|
+      format.html {render :template => "events/index", :events => @events}
+      format.json { render :json => @events.to_json.html_safe }
+    end
+
   end
 
   def history
