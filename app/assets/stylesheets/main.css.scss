@@ -23,10 +23,19 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6,
+{
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+}
+
+.brand {
+  text-transform: uppercase;
+  font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-style: italic;
+  font-weight: 700;
+
 }
 
 hr.star-light,
@@ -147,6 +156,8 @@ header .intro-text .skills {
     text-transform: uppercase;
     font-family: Montserrat,"Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
+    margin-bottom: 0px;
+    border-radius:  0px;
 }
 
 .navbar a:focus {
