@@ -4,12 +4,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width"/>
 <style>
-    /**********************************************
-    * Ink v1.0.5 - Copyright 2013 ZURB Inc        *
-    **********************************************/
-
-    /* Client-specific Styles & Reset */
-
     #outlook a {
         padding:0;
     }
@@ -845,7 +839,7 @@
               <tr>
                 <td class="panel">
 
-                  <p><%= @attendance.event.abstract%> <a href="#">详细»</a></p>
+                  <p><%= @attendance.event.abstract%> <a href="http://www.kidsmeet.cn/events/<%= @attendance.event.id %>">详细»</a></p>
 
                 </td>
                 <td class="expander"></td>
@@ -867,7 +861,7 @@
                   <table class="button">
                     <tr>
                       <td>
-                        <a href="http://www.kidsmeet.cn">更多活动...</a>
+                        <a href="http://www.kidsmeet.cn/upcomings">更多活动...</a>
                       </td>
                     </tr>
                   </table>

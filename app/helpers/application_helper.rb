@@ -6,4 +6,9 @@ module ApplicationHelper
   def avatar_placeholder_url
     "/assets/avatar/#{AVATARS[rand(AVATARS.length)]}"
   end
+
+  def email_logo_url
+    "/assets/avatar/#{AVATARS[rand(AVATARS.length)]}"
+  end
+
 end
