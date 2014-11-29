@@ -1,15 +1,18 @@
 class AttendanceMailer < ActionMailer::Base
   default from: "no-reply@kidsmeet.cn"
 
-  def send_email(attendance_id)
-    @attendance = Attendance.find(attendance_id)
-    @email_info = {:logo => "#{CONFIG['email_image_host']}/assets/email/logo_with_brand.png"}
+  def send_email_to_consumers(attendance_id)
 
+    set_email_configurations(attendance_id)
     mail(:to => @attendance.email,
          :bcc => [],
          :subject => "感谢您的关注 [#{@attendance.event.title}]",
          :template_path => "attendance_mailer",
          :template_name => "email_to_consumers");
+  end
+
+  def send_email_to_agents(attendance_id)
+    set_email_configurations(attendance_id)
 
     mail(:to => @attendance.event.agent.email,
          :bcc => [],
@@ -18,4 +21,10 @@ class AttendanceMailer < ActionMailer::Base
          :template_name => "email_to_agents");
   end
 
+  private
+
+  def set_email_configurations(attendance_id)
+    @attendance = Attendance.find(attendance_id)
+    @email_info = {:logo => "#{CONFIG['email_image_host']}/assets/email/logo_with_brand.png"}
+  end
 end
