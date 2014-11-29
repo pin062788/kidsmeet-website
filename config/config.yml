@@ -1,0 +1,12 @@
+defaults: &defaults
+  email_image_host: http://localhost:3000
+
+development:
+   <<: *defaults
+
+production:
+   <<: *defaults
+   email_image_host: http://kidsmeet.cn
+
+test:
+   <<: *defaults

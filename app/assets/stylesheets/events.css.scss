@@ -5,6 +5,9 @@
 .sb-page-header {
   background-color: #18bc9c;
   margin-bottom: 20px;
+    .brand {
+      margin-top: 9px;
+    }
 }
 
 .activity-list {
@@ -113,32 +116,32 @@
 
 
 @media screen and (max-width: 768px){
-.activity-list {
-  .activity {
-    margin-top: 10px;
-    margin-bottom: 10px;
+  .activity-list {
+    .activity {
+      margin-top: 10px;
+      margin-bottom: 10px;
 
-    border-width: 1px;
-    border-style: solid;
-    border-radius: 10px;
+      border-width: 1px;
+      border-style: solid;
+      border-radius: 10px;
 
-    margin-left: 10px;
-    margin-right: 10px;
+      margin-left: 10px;
+      margin-right: 10px;
 
-    padding-top: 10px;
-    padding-bottom: 10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
 
-    border: 3px solid #ffffff;
+      border: 3px solid #ffffff;
 
+    }
+
+    .right-box,
+    .activity-detail .right-box {
+      padding: 15px;
+      margin-right: 20px;
+      margin-left: 20px;
+    }
   }
-
-  .right-box,
-  .activity-detail .right-box {
-    padding: 15px;
-    margin-right: 20px;
-    margin-left: 20px;
-  }
-}
 }
 
 .activity-detail .info-box {
@@ -312,29 +315,6 @@
 
 .user-row:last-child {
   margin-bottom: 0;
-}
-
-.dropdown-user {
-  margin: 13px 0;
-  padding: 5px;
-  height: 100%;
-}
-
-.dropdown-user:hover {
-  cursor: pointer;
-}
-
-.table-user-information > tbody > tr {
-  border-top: 1px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
-  border-top: 0;
-}
-
-
-.table-user-information > tbody > tr > td {
-  border-top: 0;
 }
 
 .label-danger a#contact-phone {

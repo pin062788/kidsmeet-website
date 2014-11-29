@@ -23,6 +23,6 @@
           .clearfix
           pre #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
   .right-box.col-md-2
-    p 更多活动，请关注咖萌微信
+    /p 更多活动，请关注咖萌微信
 
 = paginate @events

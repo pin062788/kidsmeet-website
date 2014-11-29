@@ -36,13 +36,23 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
 
+  #config.action_mailer.smtp_settings = {
+  #    :address => 'smtp.gmail.com',
+  #    :port => 587,
+  #    :domain => 'gmail.com',
+  #    :authentication => 'plain',
+  #    :user_name => ENV['GMAIL_USERNAME'],
+  #    :password => ENV['GMAIL_PASSWORD'],
+  #    :enable_starttls_auto => true
+  #}
+
   config.action_mailer.smtp_settings = {
-      :address => 'smtp.gmail.com',
-      :port => 587,
-      :domain => 'gmail.com',
-      :authentication => 'plain',
-      :user_name => ENV['GMAIL_USERNAME'],
-      :password => ENV['GMAIL_PASSWORD'],
-      :enable_starttls_auto => true
+      :address => 'smtpcloud.sohu.com',
+      :port => 25,
+      :domain => 'wVlkVeSQ4mdxBQqB0kzbp3NsmEqmv14H.sendcloud.org',
+      :authentication => 'login',
+      :user_name => 'wldandan_test_qtO1s3',
+      :password => 'T1eyEN8DTnRN9vTL',
   }
+
 end

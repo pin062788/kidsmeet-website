@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def email_logo_url
-    "/assets/avatar/#{AVATARS[rand(AVATARS.length)]}"
+    "/assets/email/logo.png"
   end
 
 end
