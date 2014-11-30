@@ -398,3 +398,23 @@ footer .footer-below {
 .scroll-top .btn:focus {
     outline: 0;
 }
+
+#share-iterm {
+  position: absolute;
+  padding-left: 10px;
+  right: 5px;
+  top: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+#share-detail .bdsharebuttonbox{
+  background-color: #95a5a6;
+  margin-top: 2px;
+  height: 21px;
+  border-radius: .25em;
+  padding: 0px 8px;
+
+  a {
+    margin: 2px 0px;
+  }
+}

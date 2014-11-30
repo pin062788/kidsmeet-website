@@ -38,6 +38,10 @@
          span.label.label-danger
            a#contact-phone href="tel:#{@event.contact_phone}" 联系电话:#{@event.contact_phone}
 
+    .item
+      span id='share-detail'
+        == render 'shared/share_sns'
+
   .clearfix
 
   .col-md-9
