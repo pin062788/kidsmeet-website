@@ -2,6 +2,8 @@ class Event < ActiveRecord::Base
   has_many :attendances
   belongs_to :agent
 
+  scope :histories, ->(time) { where("end_time < ?", time) }
+
   validates :agent, presence: true
   validates :title, presence: true
   validates :category, presence: true
@@ -45,5 +47,9 @@ class Event < ActiveRecord::Base
     end_time - start_time
   end
 
-
+  def as_json(options = { })
+    json = super(options)
+    json[:url] = "www.kidsmeet.cn/events/#{id}"
+    json
+  end
 end

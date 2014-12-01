@@ -5,13 +5,14 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resources :attendances
-
+  resources :agents
   resources :users
 
   resources :events
   get 'upcomings', to: 'events#upcomings'
   get 'history', to: 'events#history'
   post 'attendances /join', to: 'attendances#join'
+
 
   #resources :products
   root 'events#upcomings'
@@ -47,10 +48,7 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
