@@ -40,7 +40,7 @@
 
     .item
       span id='share-detail'
-        == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.abstract}", :title => "#{@event.title}", :pic => "#{@event.mail_image_url}", :comment => '咖萌亲子', :url => "#{event_path(@event.id)}"}}
+        == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :text => "#{@event.abstract}", :pic => "#{@event.mail_image_url}", :id => "#{@event.id}"}}
 
   .clearfix
 
