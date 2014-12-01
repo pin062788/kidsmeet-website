@@ -1,5 +1,6 @@
 defaults: &defaults
   email_image_host: http://localhost:3000
+  domain_name: http://kidsmeet.cn
 
 development:
    <<: *defaults
