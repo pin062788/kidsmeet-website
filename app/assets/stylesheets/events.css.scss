@@ -13,35 +13,36 @@
 .activity-list {
   padding: 5px 5px 5px 5px;
   .activity {
-      margin-top: 5px;
-      margin-bottom: 5px;
-      padding: 5px 5px 5px 5px;
-      position: relative;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 5px 5px 5px 5px;
+    position: relative;
+    .activity-box {
+      padding: 10px;
       border: 3px solid transparent;
-
       .abstract {
-          line-height: 18px;
-          max-height: 120px;
-          display: block;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          color: #777;
-          border: 1px;
+        line-height: 18px;
+        max-height: 120px;
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: #777;
+        border: 1px;
       }
 
       .title {
-          margin-top: 5px;
-          margin-bottom: 5px;
-          position: relative;
-          font-size: 15px;
-          font-family: 'Hiragino Sans GB','Microsoft YaHei',arial,sans-serif;
-          font-weight: bold;
-          line-height: 20px;
-          max-height: 40px;
-          display: block;
-          overflow: hidden;
-          letter-spacing: 0;
-          text-overflow: ellipsis;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        position: relative;
+        font-size: 15px;
+        font-family: 'Hiragino Sans GB','Microsoft YaHei',arial,sans-serif;
+        font-weight: bold;
+        line-height: 20px;
+        max-height: 40px;
+        display: block;
+        overflow: hidden;
+        letter-spacing: 0;
+        text-overflow: ellipsis;
       }
 
       .a .img{
@@ -50,6 +51,7 @@
       }
 
       pre {
+        height: 130px;
         white-space: pre-wrap;
         white-space: -moz-pre-wrap;/* css-3 */
         white-space: -pre-wrap;/* Mozilla, since 1999 */
@@ -94,22 +96,22 @@
           }
         }
       }
-  }
-
-  .activity:hover {
-    border: 3px solid #18bc9c;
-//    background-color: #00ffff;
-//    &::before {
-//      content:"";
-//      position:absolute;
-//      top:0;
-//      left:0;
-//      right:0;
-//      bottom:0;
-//      background-color: #2c3e50;
-//      opacity: .4;
-////      z-index:2;
-//    }
+    }
+    .activity-box:hover {
+      border: 3px solid #18bc9c;
+      //    background-color: #00ffff;
+      //    &::before {
+      //      content:"";
+      //      position:absolute;
+      //      top:0;
+      //      left:0;
+      //      right:0;
+      //      bottom:0;
+      //      background-color: #2c3e50;
+      //      opacity: .4;
+      ////      z-index:2;
+      //    }
+    }
   }
 
 }

@@ -1,28 +1,27 @@
-.row
-  .col-md-10
-    .activity-list.row
-      - @events.each do |event|
-        .activity.col-md-4.col-sm-6
-          #share-iterm
-            == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.mail_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
-          a href="/events/#{event.id}"
-            = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "咖萌"
-          = link_to truncate(sanitize(event.title.html_safe),length: 20), event, { class: 'title'}
+.activity-list.row
+  - @events.each do |event|
+    .activity.col-md-4.col-sm-6
+      .activity-box
+        #share-iterm
+          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.mail_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
+        a href="/events/#{event.id}"
+          = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "咖萌"
+        = link_to truncate(sanitize(event.title.html_safe),length: 20), event, { class: 'title'}
 
-          .info-box
-            - unless event.end_time.blank?
-              .item
-                span.label.label-danger  报名截止：#{l event.end_time, :format => :date_format}
-
+        .info-box
+          - unless event.end_time.blank?
             .item
-              span.label.label-info
-                span 已报名：
-                i.fa.fa-male
-                span.badge #{event.adults_number}
-                span.separator |
-                i.fa.fa-child
-                span.badge #{event.children_number}
-          .clearfix
-          pre #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
+              span.label.label-danger  报名截止：#{l event.end_time, :format => :date_format}
+
+          .item
+            span.label.label-info
+              span 已报名：
+              i.fa.fa-male
+              span.badge #{event.adults_number}
+              span.separator |
+              i.fa.fa-child
+              span.badge #{event.children_number}
+        .clearfix
+        pre #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
 
 = paginate @events
