@@ -4,11 +4,13 @@
 		sudo apt-get update
 		sudo locale-gen en_US en_US.UTF-8 en_CA.UTF-8
 		sudo dpkg-reconfigure locales
-		sudo apt-get install apache2 curl git build-essential zlibc zlib1g-dev zlib1g libcurl4-openssl-dev libssl-dev libopenssl-ruby apache2-prefork-dev libapr1-dev libaprutil1-dev libreadline6 libreadline6-dev ImageMagick
+		sudo apt-get install apache2 curl git build-essential zlibc zlib1g-dev zlib1g libcurl4-openssl-dev libssl-dev libruby1.9.1 apache2-dev libapr1-dev libaprutil1-dev libreadline6 libreadline6-dev ImageMagick
 		sudo apt-get install build-essential libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison
 		sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties
 		sudo apt-get install mysql-server mysql-client libapache2-mod-auth-mysql libmysql-ruby
-		sudo mysqladmin -u root -h localhost password 'mypassword'
+
+		#[know issue about libmysql-ruby] https://community.openproject.org/topics/1604
+		#sudo mysqladmin -u root -h localhost -p 'k1dsm33t'
     
 
 * Setup Ruby
@@ -18,9 +20,9 @@
 		tar xzvf ruby-2.0.0-p0.tar.gz
 		cd ruby-2.0.0-p0
 		./configure
+		#[known issue] http://stackoverflow.com/questions/23488790/compile-ruby-2-0-errors-without-rvm-or-rbenv-readline-c188626-error-func
 		make
 		sudo make install
-		exit
 		ruby -v
 		which ruby
 		ls -al /usr/bin/ruby
@@ -32,7 +34,7 @@
 		sudo mkdir -p /var/www/example.com/public_html
 		sudo chown -R $USER:$USER /var/www/example.com/public_html 
 		sudo chmod -R 755 /var/www
-		sudo vi  /var/www/example.com/public_html/index.html
+		sudo vi /var/www/example.com/public_html/index.html
 		sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/example.com
 		sudo vi /etc/apache2/sites-available/example.com
 		sudo a2ensite example.com
@@ -41,10 +43,11 @@
   
 
 * Install Passenger
-
+        #For aliyun
+        sudo gem sources --remove https://rubygems.org/
+        sudo gem sources -a https://ruby.taobao.org/
 		sudo gem update --system
 		sudo gem install rails --version 4.1.6
-		sudo passenger-install-apache2-module
 		sudo gem install passenger
 		sudo passenger-install-apache2-module
 		cd /etc/apache2/
@@ -65,7 +68,6 @@
 		cd /tmp	
 		git clone https://github.com/wldandan/apache-passenger-virtualhost-trial.git
 		cd apache-passenger-virtualhost-trial/
-		sudo service apache2 restart
 		cd /etc/apache2/
 		cd sites-available/
 		sudo cp /tmp/apache-passenger-virtualhost-trial/config/kidsmeets.cn.conf .
