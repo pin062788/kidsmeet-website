@@ -134,13 +134,20 @@
       border: 3px solid #ffffff;
 
     }
+  }
 
-    .right-box,
-    .activity-detail .right-box {
-      padding: 15px;
-      margin-right: 20px;
-      margin-left: 20px;
-    }
+  .right-box,
+
+  .activity-detail .right-box .panel{
+//    padding: 15px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+
+  .ds-thread {
+    padding: 2px;
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 
