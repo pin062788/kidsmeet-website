@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   mount Sidekiq::Web => '/sidekiq'
 
   resources :attendances
-  resources :agents
   resources :users
 
   resources :events
@@ -13,6 +12,8 @@ Rails.application.routes.draw do
   get 'history', to: 'events#history'
   post 'attendances /join', to: 'attendances#join'
 
+  get 'agents/:wechat/histories' => 'agents#histories'
+  get 'agents/:wechat/upcomings' => 'agents#upcomings'
 
   #resources :products
   root 'events#upcomings'

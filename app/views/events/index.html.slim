@@ -6,7 +6,7 @@
           #share-iterm
             == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.mail_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
           a href="/events/#{event.id}"
-            = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "咖萌亲子"
+            = image_tag "#{event.main_image_url}", :class => "img-responsive", :alt => "咖萌"
           = link_to truncate(sanitize(event.title.html_safe),length: 20), event, { class: 'title'}
 
           .info-box
@@ -24,7 +24,5 @@
                 span.badge #{event.children_number}
           .clearfix
           pre #{truncate(sanitize(event.abstract.html_safe), length: 115, :omission => '...')}
-  .right-box.col-md-2
-    /p 更多活动，请关注咖萌微信
 
 = paginate @events
