@@ -4,11 +4,6 @@ module ApplicationHelper
                panda.png  pig.png  sheep.png  tiger.png)
 
   def avatar_placeholder_url
-    "/assets/avatar/#{AVATARS[rand(AVATARS.length)]}"
+    "avatar/#{AVATARS[rand(AVATARS.length)]}"
   end
-
-  def email_logo_url
-    "/assets/email/logo.png"
-  end
-
 end

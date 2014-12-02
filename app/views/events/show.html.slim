@@ -102,7 +102,7 @@
 
           .row.user-row
             .col-xs-2.user-row-avatar
-              img src="#{avatar_placeholder_url}" width="50px" height="50px"
+              = image_tag avatar_placeholder_url , height: '50px', width: '50px'
             .col-xs-10.user-row-info
               strong #{attendance.username}
               br
