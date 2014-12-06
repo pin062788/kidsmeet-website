@@ -4,7 +4,7 @@
 
 * To send email asynchronously by sidekiq, enviroment setup as follows, then sidekiq will monitor the scheduled jobs
     * install redis
-    * bundle exec sidekiq
+    * bundle exec sidekiq -e production
 
 * Set Environment varialbe ENV['BACKGROUND_PROCESS'] when running rails application
 

@@ -49,6 +49,8 @@ test: &test
 #
 production:
   <<: *default
+  pool: 25
+  url: <%= ENV['DATABASE_URL'] %>
   host: <%= ENV['KIDSMEET_DB_HOST'] %>
   database: <%= ENV['KIDSMEET_DB_NAME'] %>
   username: <%= ENV['KIDSMEET_DB_USERNAME'] %>
