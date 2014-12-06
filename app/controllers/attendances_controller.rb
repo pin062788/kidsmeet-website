@@ -40,13 +40,17 @@ class AttendancesController < ApplicationController
         @attendance.user = user
         @attendance.event = event
         if @attendance.save
-          if ENV['BACKGROUND_PROCESS']
-            AttendanceMailer.delay_for(5.second).send_email_to_consumers(@attendance.id)
-            AttendanceMailer.delay_for(5.second).send_email_to_agents(@attendance.id)
-          else
-            AttendanceMailer.send_email_to_consumers(@attendance.id).deliver!
-            AttendanceMailer.send_email_to_agents(@attendance.id).deliver!
-          end
+
+          #AttendanceMailer.send_email_to_consumers_by_value(@attendance).deliver
+          #AttendanceMailer.send_email_to_agents_by_value(@attendance).deliver
+
+          #if ENV['BACKGROUND_PROCESS']
+            AttendanceMailer.delay_for(2.second).send_email_to_consumers_by_value(@attendance)
+            AttendanceMailer.delay_for(2.second).send_email_to_agents_by_value(@attendance)
+          #else
+          #  AttendanceMailer.send_email_to_consumers(@attendance.id).deliver
+          #  AttendanceMailer.send_email_to_agents(@attendance.id).deliver
+          #end
           format.html { redirect_to attendance_event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
           format.json { render :show, status: :created, location: attendance_event }
         else

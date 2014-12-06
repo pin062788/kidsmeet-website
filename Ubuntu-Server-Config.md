@@ -8,6 +8,7 @@
 		sudo apt-get install build-essential libyaml-dev libsqlite3-0 libsqlite3-dev sqlite3 libxml2-dev libxslt-dev autoconf libc6-dev ncurses-dev automake libtool bison
 		sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties
 		sudo apt-get install mysql-server mysql-client libapache2-mod-auth-mysql libmysql-ruby
+		sudo apt-get install sendmail
 
 		#[know issue about libmysql-ruby] https://community.openproject.org/topics/1604
 		#sudo mysqladmin -u root -h localhost -p 'k1dsm33t'
@@ -62,6 +63,10 @@
 		sudo a2enmod passenger
 		sudo service apache2 restart
 		apache2ctl -t -D DUMP_MODULES
+
+* Setup Redis-Server
+        sudo apt-get install redis-server
+		sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.default
 
 * Setup VirtualHost
 			
