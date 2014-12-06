@@ -45,8 +45,12 @@ class AttendancesController < ApplicationController
           #AttendanceMailer.send_email_to_agents_by_value(@attendance).deliver
 
           #if ENV['BACKGROUND_PROCESS']
-            AttendanceMailer.delay_for(2.second).send_email_to_consumers_by_value(@attendance)
-            AttendanceMailer.delay_for(2.second).send_email_to_agents_by_value(@attendance)
+          #  AttendanceMailer.delay_for(2.second).send_email_to_consumers_by_value(@attendance)
+          #  AttendanceMailer.delay_for(2.second).send_email_to_agents_by_value(@attendance)
+
+
+            AttendanceMailer.delay_for(2.second).send_email_to_consumers(@attendance.id)
+            AttendanceMailer.delay_for(2.second).send_email_to_agents(@attendance.id)
           #else
           #  AttendanceMailer.send_email_to_consumers(@attendance.id).deliver
           #  AttendanceMailer.send_email_to_agents(@attendance.id).deliver
