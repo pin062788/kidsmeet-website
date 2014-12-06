@@ -53,8 +53,8 @@ Rails.application.configure do
       :port => 25,
       :domain => 'wVlkVeSQ4mdxBQqB0kzbp3NsmEqmv14H.sendcloud.org',
       :authentication => 'login',
-      :user_name => 'wldandan_test_qtO1s3',
-      :password => 'T1eyEN8DTnRN9vTL',
+      :user_name => ENV['SEND_CLOUD_MAIL_USERNAME'],
+      :password => ENV['SEND_CLOUD_MAIL_PASSWORD'],
   }
 
 end

@@ -78,12 +78,11 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.smtp_settings = {
-      :address => 'smtp.gmail.com',
-      :port => 587,
-      :domain => 'gmail.com',
-      :authentication => 'plain',
-      :user_name => ENV['GMAIL_USERNAME'],
-      :password => ENV['GMAIL_PASSWORD'],
-      :enable_starttls_auto => true
+      :address => 'smtpcloud.sohu.com',
+      :port => 25,
+      :domain => 'wVlkVeSQ4mdxBQqB0kzbp3NsmEqmv14H.sendcloud.org',
+      :authentication => 'login',
+      :user_name => ENV['SEND_CLOUD_MAIL_USERNAME'],
+      :password => ENV['SEND_CLOUD_MAIL_PASSWORD'],
   }
 end
