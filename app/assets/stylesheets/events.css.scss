@@ -249,8 +249,16 @@
   background-color: white;
   padding: 20px;
   box-shadow: 5px 5px 5px #888888;
-}
 
+  .activity-full {
+    background-image: url('activity-full.png');
+    position: absolute;
+    width: 156px;
+    height: 122px;
+    right: 0;
+    top: -50px;
+  }
+}
 
 .activity-detail .right-box .panel-heading{
   background-color: #18bc9c;

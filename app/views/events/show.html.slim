@@ -46,6 +46,8 @@
 
   .col-md-9
     .left-box
+      -if @event.id == 9
+        .activity-full
       .abstract
         = @event.abstract.html_safe
 
@@ -93,7 +95,7 @@
                 option 3
 
 
-            button type="submit" class="btn btn-primary btn-lg btn-block" 立刻报名
+            button type="submit" class="btn btn-primary btn-lg btn-block" #{@event.id == 9 ?  '缺额登记' : '立刻报名'}
 
       .panel.panel-primary
         .panel-heading 游伴们
