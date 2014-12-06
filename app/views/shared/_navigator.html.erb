@@ -1,6 +1,6 @@
 <!-- Navigation -->
 <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
+  <div class="menu-container">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header page-scroll">
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-menu">
@@ -21,6 +21,9 @@
         </li>
         <li class= <%= 'active' if "#{@menu_item}".eql?"upcomings" %>><a href="/upcomings">热门活动</a></li>
         <li class= <%= 'active' if "#{@menu_item}".eql?"history" %>><a href="/history">经典回顾</a></li>
+        <li class= <%= 'active' if "#{@menu_item}".eql?"darens" %>><a href="<%=darens_path%>">达人秀</a></li>
+        <li class= <%= 'active' if "#{@menu_item}".eql?"wishes" %>><a href="<%=wishes_path%>">晒心愿</a></li>
+        <li class= <%= 'active' if "#{@menu_item}".eql?"shares" %>><a href="<%=shares_path%>">成长笔记</a></li>
         <li class="page-scroll">
           <a href="#contact"></a>
         </li>

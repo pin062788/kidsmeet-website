@@ -8,6 +8,10 @@ Rails.application.routes.draw do
   resources :users
 
   resources :events
+  resources :darens
+  resources :wishes
+  resources :shares
+
   get 'upcomings', to: 'events#upcomings'
   get 'history', to: 'events#history'
   post 'attendances /join', to: 'attendances#join'

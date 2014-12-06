@@ -19,6 +19,30 @@ a.active {
     color: #3498db;
 }
 
+.menu-container, .sub-content-container{
+  box-sizing: border-box;
+  width: 80%;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.sb-page-header {
+  background-color: #18bc9c;
+  margin-bottom: 20px;
+  .brand {
+    margin-top: 9px;
+  }
+  .sub-content-container {
+    padding: 5px;
+  }
+}
+
+.container {
+  min-height: 400px;
+}
+
 h1,
 h2,
 h3,
