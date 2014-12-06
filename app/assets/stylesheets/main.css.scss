@@ -1,6 +1,6 @@
 body {
     overflow-x: hidden;
-    background-color: rgb(238, 238, 238);
+//    background-color: rgb(238, 238, 238);
 }
 
 p {
@@ -31,12 +31,20 @@ a.active {
 .sb-page-header {
   background-color: #18bc9c;
   margin-bottom: 20px;
+  padding-top: 60px;
+  width: 100%;
+  z-index: 99;
   .brand {
     margin-top: 9px;
   }
   .sub-content-container {
     padding: 5px;
   }
+}
+
+.space-block {
+  height: 240px;
+  display: none;
 }
 
 .container {
@@ -196,6 +204,21 @@ header .intro-text .skills {
 .navbar .navbar-nav li a:focus,
 .navbar .navbar-nav li a:hover {
   outline: 0;
+  color: #18bc9c;
+}
+
+.navbar-default {
+  background-color: white;
+  position: fixed;
+  width: 100%;
+  z-index: 101;
+}
+
+.navbar-default .navbar-brand {
+  color: #18bc9c;
+}
+
+.navbar-default .navbar-nav > li > a {
   color: #18bc9c;
 }
 
@@ -383,7 +406,10 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #233140;
+    background-color: #18bc9c;
+    a {
+      color: white;
+    }
 }
 
 .btn-social {
@@ -446,4 +472,8 @@ footer .footer-below {
 
 .bd_weixin_popup {
   height: 320px;
+}
+
+.navbar-default .navbar-toggle {
+  background-color: #18bc9c;
 }
