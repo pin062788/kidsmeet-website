@@ -4,9 +4,25 @@
 
 ---------About Email Sending---------
 * To send email asynchronously by sidekiq, enviroment setup as follows, then sidekiq will monitor the scheduled jobs
+
     * install redis
-    * sudo bundle exec sidekiq -d -L log/sidekiq.log -C config/sidekiq.yml -e production
+        - apt-get install redis-server
+
+    * config redis
+        - change the file /etc/redis/redis.conf, change daemonize from 'no' to 'yes'
+
+    * start resids
+        `/usr/bin/redis-server /etc/redis/redis.conf`
+
+    * `source /opt/config/kidsmeet/env.sh`
+
+    * `sudo chown -R $USER:$USER /var/www/kidsmeet.cn/tmp/pids`
+
+    * `bundle exec sidekiq -d -L log/sidekiq.log -C config/sidekiq.yml -e production`
+
     * tail -f log/sidekiq.log
+
+    * Check sidekiq by webiste /sidekiq
 
 * Set Environment varialbe ENV['BACKGROUND_PROCESS'] when running rails application
 
