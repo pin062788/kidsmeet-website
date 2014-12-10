@@ -4,7 +4,10 @@ Sidekiq.configure_server do |config|
   Rails.logger.info("init sidekiq configuration.")
   database_url = ENV['DATABASE_URL']
   sidekiq_concurrency = ENV['SIDEKIQ_CONCURRENCY'] || 25
-  if(database_url && sidekiq_concurrency)
+
+  if database_url.blank?
+    Rails.logger.info("Failed to detect the database url, please set ENVIRONMENT VARIABLE [DATABASE_URL]")
+  else(database_url && sidekiq_concurrency)
     Rails.logger.info("init database_url.")
     Rails.logger.debug("Setting custom connection pool size of #{sidekiq_concurrency} for Sidekiq Server")
 
