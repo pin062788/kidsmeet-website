@@ -27,9 +27,10 @@
     <%= render("shared/header") %>
 
     <!-- Page Content -->
-    <div class="space-block"></div>
-    <div class="container" id="main-content">
-      <%=yield%>
+    <div class="default-content">
+        <div class="container" id="main-content">
+          <%=yield%>
+        </div>
     </div>
     <%= render("shared/about") %>
     <%= render("shared/footer") %>
