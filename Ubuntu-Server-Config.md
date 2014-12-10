@@ -12,7 +12,7 @@
 
 		#[know issue about libmysql-ruby] https://community.openproject.org/topics/1604
 		#sudo mysqladmin -u root -h localhost -p 'k1dsm33t'
-		GRANT ALL PRIVILEGES ON kidsmeet.* TO 'kidsmeet'@'localhost' IDENTIFIED BY 'k1dsm33t' WITH GRANT OPTION;
+		GRANT ALL PRIVILEGES ON kidsmeet.* TO 'kidsmeet'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
     
 
 * Setup Ruby
