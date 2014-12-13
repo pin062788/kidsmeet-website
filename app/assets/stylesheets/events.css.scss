@@ -334,6 +334,42 @@
   color:#ffffff
 }
 
+.wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes zoom-in-image
+{
+  0% {transform: scale(1) }
+  100% {transform: scale(1.2); }
+}
+
+@-moz-keyframes zoom-in-image /* Firefox */
+{
+  0% {transform: scale(1) }
+  100% {transform: scale(1.2); }
+}
+
+@-webkit-keyframes zoom-in-image /* Safari 和 Chrome */
+{
+  0% {transform: scale(1) }
+  100% {transform: scale(1.2); }
+}
+
+@-o-keyframes zoom-in-image /* Opera */
+{
+  0% {transform: scale(1) }
+  100% {transform: scale(1.2); }
+}
+
+.img-responsive:hover {
+  animation:zoom-in-image 1s 1;
+  -webkit-animation:zoom-in-image 1s 1; /* Safari 和 Chrome */
+  transform: scale(1.2);
+  -webkit-filter: grayscale(30%);
+}
+
 @media screen and (max-width: 991px) {
   .activity-list .activity .activity-box {
     padding: 12px 12px 35px;

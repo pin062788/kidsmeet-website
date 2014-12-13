@@ -416,9 +416,10 @@ footer .footer-col {
 
 footer .footer-below {
     padding: 25px 0;
-    background-color: #18bc9c;
+    background-color: #d6d6d6;
+    color: #585858;
     a {
-      color: white;
+      color: #585858;
     }
 }
 
@@ -504,6 +505,15 @@ footer .footer-below {
 
   &:focus {
     background: white;
+  }
+}
+
+.pager li > a, .pager li > span {
+  background-color: #ff6800;
+
+  &:hover {
+    background-color: #e84200;
+    border-color: #e84200;
   }
 }
 
