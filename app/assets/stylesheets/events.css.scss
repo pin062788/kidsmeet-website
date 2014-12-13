@@ -4,8 +4,10 @@
 .activity-list {
   .activity {
     margin-bottom: 5px;
-    padding: 15px;
+    padding: 0 15px;
     position: relative;
+    line-height: 1.42857;
+
     .registration-full {
       position: absolute;
       left: 14px;
@@ -21,7 +23,7 @@
       border: 1px solid #ddd;
 
       margin-bottom: 20px;
-      padding: 20px 20px 25px;
+      padding: 20px 20px 40px;
 
       .abstract {
         line-height: 18px;
@@ -31,21 +33,6 @@
         text-overflow: ellipsis;
         color: #777;
         border: 1px;
-      }
-
-      .title {
-        margin-top: 5px;
-        margin-bottom: 5px;
-        position: relative;
-        font-size: 15px;
-        font-family: 'Hiragino Sans GB','Microsoft YaHei',arial,sans-serif;
-        font-weight: bold;
-        line-height: 20px;
-        max-height: 40px;
-        display: block;
-        overflow: hidden;
-        letter-spacing: 0;
-        text-overflow: ellipsis;
       }
 
       .image-container {
@@ -87,14 +74,32 @@
       }
 
       .info-box{
-        float: left;
-        margin-top: 1px;
-        margin-bottom: 1px;
+        overflow: hidden;
+        height: 139px;
+        margin: 0 5px 25px;
+
+        box-sizing: border-box;
+
+        h1 {
+          font-size: 22px;
+          border: 0;
+          margin: 16px 0 6px;
+          line-height: 26px;
+
+          a {
+            color: #393939;
+            transition: color .3s ease-in-out 0s;
+
+            &:hover {
+              color: #ff6800;
+              text-decoration: none;
+            }
+          }
+        }
 
         .item{
           padding-right: 5px;
           margin-bottom: 10px;
-          float: left;
           margin-right: 6px;
 
           span.separator {
@@ -123,35 +128,12 @@
         }
       }
     }
-    .activity-box:hover {
-      box-shadow: 8px 8px 8px #888888;
-    }
   }
 
 }
 
 
 @media screen and (max-width: 768px){
-  .activity-list {
-    .activity {
-      margin-top: 10px;
-      margin-bottom: 10px;
-
-      border-width: 1px;
-      border-style: solid;
-      border-radius: 10px;
-
-      margin-left: 10px;
-      margin-right: 10px;
-
-      padding-top: 10px;
-      padding-bottom: 10px;
-
-      border: 3px solid #ffffff;
-
-    }
-  }
-
   .right-box,
 
   .activity-detail .right-box .panel{
@@ -184,22 +166,6 @@
 .activity-detail .info-box .item .label,
 {
   font-size: 80%;
-}
-
-
-.activity-detail .btn-primary {
-  color: #ffffff;
-  background-color: #18bc9c;
-  border-color: #18bc9c;
-}
-
-.activity-detail .btn-primary:hover,
-.activity-detail .btn-primary:focus,
-.activity-detail .btn-primary.active {
-  color: #ffffff;
-  background-color: #3498db;;
-  border-color: #3498db;
-
 }
 
 .activity-detail .title {
@@ -317,9 +283,15 @@
 }
 
 .btn-primary {
-  color: #ffffff;
-  background-color: #18bc9c;
-  border-color: #18bc9c;
+  background-color: #ff6800;
+  border-color: #ff6800;
+  color: white;
+
+  &:hover {
+    background-color: #e84200;
+    border-color: #e84200;
+    color: white;
+  }
 }
 
 
@@ -360,4 +332,21 @@
 
 .label-danger a#contact-phone {
   color:#ffffff
+}
+
+@media screen and (max-width: 991px) {
+  .activity-list .activity .activity-box {
+    padding: 12px 12px 35px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .activity-list .activity {
+    padding: 0;
+  }
+
+  .activity-list .activity .activity-box {
+    margin-bottom: 10px;
+    padding: 10px 12px 40px;
+  }
 }
