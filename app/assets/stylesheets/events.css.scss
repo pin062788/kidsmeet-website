@@ -1,6 +1,12 @@
 // Place all the styles related to the events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.gallery {
+  margin: 0 0 50px 0;
+  padding: 0;
+  width: 99%;
+}
+
 .activity-list {
   .activity {
     margin-bottom: 5px;
@@ -132,23 +138,6 @@
 
 }
 
-
-@media screen and (max-width: 768px){
-  .right-box,
-
-  .activity-detail .right-box .panel{
-//    padding: 15px;
-    margin-right: 8px;
-    margin-left: 8px;
-  }
-
-  .ds-thread {
-    padding: 2px;
-    margin-right: 15px;
-    margin-left: 15px;
-  }
-}
-
 .activity-detail .info-box {
   float: left;
   margin-left: 15px;
@@ -236,27 +225,12 @@
   font-size: 15px;
 }
 
-.left-box {
-  margin-bottom: 40px;
-  margin-right: 20px;
-  background-color: white;
-  padding: 20px;
-  box-shadow: 5px 5px 5px #888888;
+.right-box .panel-heading{
+  background: none repeat scroll 0 0 #ff6800;
+  border-color: #ff6800;
+  padding: 15px 15px 10px;
 
-  .activity-full {
-    background-image: url('activity-full.png');
-    position: absolute;
-    width: 156px;
-    height: 122px;
-    right: 0;
-    top: -50px;
-  }
-}
-
-.activity-detail .right-box .panel-heading{
-  background-color: #18bc9c;
-  border-color: #18bc9c;
-  font-weight: bold;
+  font-size: 16px;
 }
 
 .activity-detail .right-box {
@@ -275,11 +249,76 @@
   font-size: 12px;
 }
 
-.form-group label{
-  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 13px;
-  line-height: 1.42857143;
-  color: #2c3e50;
+.panel-content {
+  padding: 20px;
+
+  li {
+    display: block;
+    height: 40px;
+  }
+
+  .more-info {
+    border: 3px solid #e8e8e8;
+    margin: 20px 0;
+    padding: 25px 20px 0;
+    text-align: center;
+    max-height: 270px;
+    overflow: hidden;
+
+    font-size: 14px;
+
+    .label {
+      color: #000000;
+      font-size: 20px;
+      font-weight: normal;
+    }
+
+    .label-info {
+      color: white;
+      font-size: 20px;
+    }
+
+    .badge {
+      background-color: #3498db;
+    }
+
+    .col-sm-4 {
+      padding: 0;
+    }
+  }
+
+  .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.sign-up-form {
+  background: #fffad5;
+  border-top: 2px solid #ffef83;
+  border-bottom: 2px solid #ffef83;
+  padding: 20px 0 0 20px;
+
+  .form-group {
+    label{
+      display: inline-block;
+      font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-size: 13px;
+      line-height: 1.42857143;
+      color: #2c3e50;
+      width: 25%;
+    }
+
+    input,select {
+      display: inline-block;
+      border-width: 1px;
+      width: 70%;
+    }
+
+    button {
+      width: 70%;
+    }
+  }
 }
 
 .btn-primary {
@@ -301,6 +340,13 @@
   border-style: solid;
 }
 
+.panel-primary {
+  border: none;
+
+  -webkit-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
 
 .panel-body{
   padding: 5px 5px 5px 15px;
@@ -363,20 +409,82 @@
   100% {transform: scale(1.2); }
 }
 
-.img-responsive:hover {
+.img-preview:hover {
   animation:zoom-in-image 1s 1;
   -webkit-animation:zoom-in-image 1s 1; /* Safari 和 Chrome */
   transform: scale(1.2);
   -webkit-filter: grayscale(30%);
 }
 
+.intro {
+  width: 99%;
+  background: white;
+
+  border: 1px solid #ddd;
+
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+
+  -webkit-box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  -moz-box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+  box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
+
+  margin: 0 0 20px 0;
+  padding: 15px 30px 20px;
+
+  position: relative;
+
+  .intro-content {
+    h3 {
+      font-size: 22px;
+      border-bottom: 0;
+      padding: 0;
+      margin: 16px 0 0;
+
+      border-bottom: 1px dashed #c7c7c7;
+      margin: 10px 0 0 0;
+      padding: 0 0 8px;
+    }
+  }
+}
+
 @media screen and (max-width: 991px) {
   .activity-list .activity .activity-box {
     padding: 12px 12px 35px;
   }
+  .img-preview:hover {
+    animation: none;
+    -webkit-animation: none;
+    transform: scale(1);
+    -webkit-filter: grayscale(30%);
+  }
+
+  .panel-content {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .row.more-info {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .panel-content .more-info .label {
+    font-size: 14px;
+  }
+
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1200px) {
+  .panel-content .more-info .label {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px){
   .activity-list .activity {
     padding: 0;
   }
@@ -384,5 +492,29 @@
   .activity-list .activity .activity-box {
     margin-bottom: 10px;
     padding: 10px 12px 40px;
+  }
+
+  .right-box {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .ds-thread {
+    padding: 2px;
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+
+  .row {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+
+  .intro {
+    width: 100%;
+  }
+
+  .activity-intro, .right-box {
+    padding-left: 0;
+    padding-right: 0;
   }
 }

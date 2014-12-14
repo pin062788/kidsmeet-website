@@ -17,6 +17,12 @@ body {
   }
 }
 
+*:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
 body h1 {
   font-size: 28px;
   text-shadow: 1px 1px white;
@@ -28,9 +34,29 @@ body h1 {
   color: inherit;
 }
 
+
+body legend {
+  display: block;
+
+  font-size: 35px;
+  text-shadow: 1px 1px white;
+  border: 0;
+  border-bottom: 1px dashed #393939;
+  padding: 0;
+  margin: 15px 0 8px;
+  width: 99%;
+
+  line-height: inherit;
+  color: #333;
+}
+
 .row {
 margin-right: -15px;
 margin-left: -15px;
+}
+
+ul {
+  list-style: none;
 }
 
 p.small {
@@ -593,7 +619,7 @@ footer .footer-below {
   }
   .row {
     margin-left: 0;
-    margin-left: 0;
+    margin-right: 0;
   }
 
   #share-iterm {
