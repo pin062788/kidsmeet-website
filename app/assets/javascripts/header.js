@@ -1,15 +1,19 @@
+var lastScroll = 0;
+
 window.onscroll = function(){
+  if( $(window).width() <= 767) {
 
-  var sbPageHeaer = $('.sb-page-header');
-  if( window.pageYOffset >= 100 &&  $(sbPageHeaer).css('position')!='fixed') {
-    $(sbPageHeaer).css('position','fixed');
-    $(sbPageHeaer).css('top','-100px');
-    $('.space-block').show();
-  }
+    var navigatorBar = $('.navbar-default');
+    var st = $(this).scrollTop();
+    var scrollDown = (st > lastScroll);
 
-  if( window.pageYOffset <= 100 &&  $(sbPageHeaer).css('position')=='fixed') {
-    $(sbPageHeaer).css('position','relative');
-    $(sbPageHeaer).css('top','0px');
-    $('.space-block').hide();
+    if( scrollDown && window.pageYOffset >= 100 ) {
+      $(navigatorBar).css('top','-50px');
+    }
+    if(!scrollDown ) {
+      $(navigatorBar).css('top','0px');
+    }
+
+    lastScroll = st;
   }
 }
