@@ -20,6 +20,8 @@
         = image_tag "#{@event.detail_image_url}", :class => "img-responsive"
 
       .intro.col-md-12.col-sm-12.col-xs-12.flex-order-3
+        #share-iterm
+          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :pic => "#{@event.mail_image_url}", :text => "#{@event.abstract}", :id => "#{@event.id}"}}
         .intro-content
           h3 活动介绍
         p
@@ -104,10 +106,6 @@
                        .col-md-8.col-sm-8.col-xs-8
                         span.label.label-danger
                           a#contact-phone href="tel:#{@event.contact_phone}" #{@event.contact_phone}
-
-                /.item
-                  span id='share-detail'
-                    == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :text => "#{@event.abstract}", :pic => "#{@event.mail_image_url}", :id => "#{@event.id}"}}
 
     .row
       col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
