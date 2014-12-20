@@ -35,6 +35,10 @@ gem 'kaminari', '~> 0.16.1'
 gem 'sinatra', require: false
 gem 'sidekiq'
 
+group :development do
+  gem 'annotate'
+end
+
 group :development, :test do
   gem 'byebug',     :platform => :ruby_20
   gem 'rspec-rails'
