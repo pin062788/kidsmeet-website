@@ -34,6 +34,8 @@ gem 'font-awesome-rails'
 gem 'kaminari', '~> 0.16.1'
 gem 'sinatra', require: false
 gem 'sidekiq'
+gem 'paperclip','3.4.2'
+gem "paperclip-compression"
 
 group :development do
   gem 'annotate'
