@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20141105164017) do
   end
 
   create_table "events", force: true do |t|
+    t.integer  "agent_id"
     t.string   "title"
     t.string   "category"
     t.string   "abstract"
@@ -34,12 +35,14 @@ ActiveRecord::Schema.define(version: 20141105164017) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "contact_phone"
-    t.string   "duration"
     t.string   "address"
-    t.boolean  "is_published"
+    t.boolean  "is_published",   default: true
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "events", ["contact_phone"], name: "index_events_on_contact_phone", using: :btree
+  add_index "events", ["title"], name: "index_events_on_title", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "username"
@@ -48,5 +51,8 @@ ActiveRecord::Schema.define(version: 20141105164017) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["username"], name: "index_users_on_username", using: :btree
 
 end
