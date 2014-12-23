@@ -1,8 +1,8 @@
 class Event < ActiveRecord::Base
   has_many :attendances
   belongs_to :agent
-  has_many :assets, :class_name=> "Ckeditor::Picture", :autosave => true
-  accepts_nested_attributes_for :assets, :allow_destroy => true
+  has_many :pictures, :class_name=> "Ckeditor::Picture", :autosave => true
+  accepts_nested_attributes_for :pictures, :allow_destroy => true
 
   scope :histories, ->(time) { where("end_time < ?", time) }
 

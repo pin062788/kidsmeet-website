@@ -17,7 +17,11 @@
       .col-md-12.col-sm-12.gallery
         -if @event.id == 9
           .activity-full
-        = image_tag "#{@event.detail_image_url}", :class => "img-responsive"
+        .jcarousel dir='rtl'
+          ul
+            - @event.pictures.each do |picture|
+              li.jcarousel-item
+                = image_tag "#{picture.try(:data).try(:url, :medium)}", :class => "img-responsive"
 
       .intro.col-md-12.col-sm-12.col-xs-12.flex-order-3
         #share-iterm

@@ -27,12 +27,10 @@ class Ckeditor::Picture < Ckeditor::Asset
   belongs_to :agent
   belongs_to :event
 
-  has_one :attachment, as: :attachable
+  has_one :attachments, as: :attachable
 
   has_attached_file :data,
                             :processors => [:watermark],
-                            :url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
-                            :path => ":id/:style_:basename.:extension",
                             :styles => {
                                 :thumb => '118x100#',
                                 :large => {
