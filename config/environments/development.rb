@@ -38,7 +38,7 @@ Rails.application.configure do
 
   config.action_mailer.preview_path = "#{Rails.root}/app/mailer_previews"
 
-  Paperclip::Attachment.default_options[:url] = "/system/:class/:attachment/:id/:style/:filename"
+  Paperclip::Attachment.default_options[:url] = "/system/:class/:attachment/:id_partition/:style/:filename"
   #:url  => "#{CONFIG['image_host']}/ckeditor_assets/pictures/:id/:style_:basename.:extension",
   #    :path => ":id/:style_:basename.:extension"
 

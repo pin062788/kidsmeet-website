@@ -22,7 +22,10 @@
             - @event.pictures.each do |picture|
               li.jcarousel-item
                 = image_tag "#{picture.try(:data).try(:url, :medium)}", :class => "img-responsive"
-
+          a.jcarousel-control-prev
+            i.fa.fa-angle-left
+          a.jcarousel-control-next
+            i.fa.fa-angle-right
       .intro.col-md-12.col-sm-12.col-xs-12.flex-order-3
         #share-iterm
           == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :pic => "#{@event.mail_image_url}", :text => "#{@event.abstract}", :id => "#{@event.id}"}}

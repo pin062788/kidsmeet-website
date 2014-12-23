@@ -9,7 +9,7 @@
 //
 // stub path allows dependency to be excluded from the asset bundle.
 //
-//= require jquery
+//= require jquery.jcarousel-core.min
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
