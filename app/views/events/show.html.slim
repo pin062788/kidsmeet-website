@@ -26,6 +26,10 @@
             i.fa.fa-angle-left
           a.jcarousel-control-next
             i.fa.fa-angle-right
+        .jcarousel-pagination
+          - index = 0
+          - @event.pictures.each do |picture|
+            a href="#"
       .intro.col-md-12.col-sm-12.col-xs-12.flex-order-3
         #share-iterm
           == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{@event.title}", :pic => "#{@event.mail_image_url}", :text => "#{@event.abstract}", :id => "#{@event.id}"}}
@@ -134,3 +138,6 @@
     .intro-content
       h3 网友怎么说
     .ds-thread data-thread-key="#{@event.id}" data-title="#{@event.title}" data-url="#{@event.address}"
+
+= javascript_include_tag 'image-carousel'
+

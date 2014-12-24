@@ -12,7 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require jquery.jcarousel-core.min
+//= require jquery.jcarousel.min
 //= require bootstrap.min
 //= require turbolinks
 //= require_tree .
