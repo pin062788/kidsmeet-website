@@ -13,6 +13,9 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.jcarousel.min
+//= require jquery.jscroll.min
 //= require bootstrap.min
 //= require turbolinks
-//= require_tree .
+//= require comments
+//= require share-sns-config
+//= require google-analytics

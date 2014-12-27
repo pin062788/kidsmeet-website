@@ -4,7 +4,7 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all.page params[:page]
+    @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
   end
 
   def upcomings

@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get 'agents/:wechat/upcomings' => 'agents#upcomings'
 
   #resources :products
-  root 'events#upcomings'
+  root 'events#index'
   #get ':controller(/:action(/:id(.:format)))'
   #match "/activity", :to => 'events#upcomings'
   #match "/history", :to => 'events#history'

@@ -451,6 +451,21 @@
   }
 }
 
+#infscr-loading {
+  text-align: center;
+  div {
+    display: inline-block;
+    color: #585858;
+    em {
+      padding-left: 15px;
+    }
+  }
+  img {
+    display: inline-block;
+    width: 30px;
+  }
+}
+
 @media screen and (max-width: 991px) {
   .activity-list .activity .activity-box {
     padding: 12px 12px 35px;
