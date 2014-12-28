@@ -10,12 +10,7 @@ class EventsController < ApplicationController
   def upcomings
     @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
     @menu_item = 'upcomings'
-
-    respond_to do |format|
-      format.html {render :template => "events/index", :events => @events}
-      format.json { render :json => @events.to_json.html_safe }
-    end
-
+    render :template => "events/index", :events => @events
   end
 
   def history
@@ -94,7 +89,7 @@ class EventsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def event_params
-      params.require(:event).permit(:title, :category,:contact_phone, :abstract, :content, :main_image_url)
+      params.require(:event).permit(:title, :category,:contact_phone, :abstract, :content)
     end
 
 

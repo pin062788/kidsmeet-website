@@ -11,7 +11,6 @@ class Event < ActiveRecord::Base
   validates :category, presence: true
   validates :abstract, presence: true
   validates :content, presence: true
-  validates :main_image_url, presence: true
   validates :start_time, presence: true
   validates :end_time, presence: true
 
@@ -33,13 +32,16 @@ class Event < ActiveRecord::Base
   end
 
   def detail_image_url
-    main_image_url.gsub('medium','large')
+    brand_image_url.gsub('medium','large')
   end
 
-  def mail_image_url
-    main_image_url.gsub('medium','wechat')
+  def brand_image_url
+    "#{CONFIG['image_server']}/#{main_image.id}/original_#{main_image.data_file_name}"
   end
 
+  def main_image
+    pictures.first
+  end
 
   def users
     #User.in(id: attendances.map(&:user_id))

@@ -7,11 +7,11 @@ h1 热门活动
         /  .registration-full
         /    = image_tag 'full.png'
         #share-iterm
-          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.mail_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
+          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.brand_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
         .image-container
           a href="/events/#{event.id}"
             .wrapper
-              = image_tag "#{event.main_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
+              = image_tag "#{event.brand_image_url}", :class => "img-responsive img-preview", :alt => "咖萌"
 
         .info-box
           h1

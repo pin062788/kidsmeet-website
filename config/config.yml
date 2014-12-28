@@ -1,6 +1,7 @@
 defaults: &defaults
   email_image_host: http://localhost:3000
   domain_name: http://kidsmeet.cn
+  image_server: http://kidmeets-images.qiniudn.com
 
 development:
    <<: *defaults
