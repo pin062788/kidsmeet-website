@@ -11,9 +11,9 @@
 		sudo apt-get install sendmail
 
 		#[know issue about libmysql-ruby] https://community.openproject.org/topics/1604
-		#sudo mysqladmin -u root -h localhost -p 'k1dsm33t'
+		#sudo mysqladmin -u root -h localhost -p '*****'
 		GRANT ALL PRIVILEGES ON kidsmeet.* TO 'kidsmeet'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
-    
+
 
 * Setup Ruby
 
@@ -31,10 +31,16 @@
 		ls /usr/local/bin/ruby -v
 		ruby -v
 
+
+* Setup a user
+        adduser apache
+        vi /etc/sudoers to add apache user to sudo list
+
+
 * Setup Apache
 
 		sudo mkdir -p /var/www/example.com/public_html
-		sudo chown -R $USER:$USER /var/www/example.com/public_html 
+		sudo chown -R $USER:$USER /var/www/example.com/public_html
 		sudo chmod -R 755 /var/www
 		sudo vi /var/www/example.com/public_html/index.html
 		sudo cp /etc/apache2/sites-available/default /etc/apache2/sites-available/example.com
@@ -42,7 +48,9 @@
 		sudo a2ensite example.com
 		sudo service apache2 restart
 		apache2 -v
-  
+
+* Setup Virtual host
+        Please refer to https://github.com/wldandan/apache-passenger-virtualhost-trial
 
 * Install Passenger
         #For aliyun
@@ -59,8 +67,8 @@
 		sudo vi /etc/apache2/mods-available/passenger.conf
 		ls -al /usr/local/lib/ruby/gems/2.0.0/gems/passenger-4.0.53
 		cd mods-available/
-		cat passenger.conf 
-		cat passenger.load 
+		cat passenger.conf
+		cat passenger.load
 		sudo a2enmod passenger
 		sudo service apache2 restart
 		apache2ctl -t -D DUMP_MODULES
@@ -70,8 +78,8 @@
 		sudo cp /etc/redis/redis.conf /etc/redis/redis.conf.default
 
 * Setup VirtualHost
-			
-		cd /tmp	
+
+		cd /tmp
 		git clone https://github.com/wldandan/apache-passenger-virtualhost-trial.git
 		cd apache-passenger-virtualhost-trial/
 		cd /etc/apache2/
@@ -81,6 +89,23 @@
 		sudo service apache2 restart
 
 * Setup mysql database
-
         RAILS_ENV=production bundle exec rake db:create
+            it will ask 'Access denied for user 'kidsmeet'@'localhost' (using password: YES)Please provide the root password for your mysql installation'
+
         RAILS_ENV=production bundle exec rake db:migrate
+
+* Setup mysql.sock
+    ln -s /var/run/mysqld/mysqld.sock /tmp/mysql.sock
+
+* Setup mysql to remote access '/etc/mysql/my.cnf'
+    bind-address  = 106.186.117.131
+
+* ExecJS::RuntimeUnavailable: Could not find a JavaScript runtime. See https://github.com/sstephenson/execjs for a list of available runtimes.
+    apt-get install node
+    apt-get install nodejs
+
+* Setup permission for ruby_wrpper.sh & env.sh
+    sudo chown $USER:$USER /opt/config/kidsmeet/ruby_wrapper.sh
+    sudo chmod u+x /opt/config/kidsmeet/ruby_wrapper.sh
+    sudo chown $USER:$USER /opt/config/kidsmeet/env.sh
+    sudo chmod u+x /opt/config/kidsmeet/env.sh
