@@ -2,7 +2,7 @@
     It will generate the secret key and then export SECRET_KEY_BASE = xxx
 
 * Clean Precompile assets and regenerate
-    sudo RAILS_ENV=production bundle exec rake assets:clean assets:precompile
+    RAILS_ENV=production bundle exec rake assets:clean assets:precompile
 
 * Execute in dev|production machine
     bundle package
