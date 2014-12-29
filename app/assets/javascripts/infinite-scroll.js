@@ -6,8 +6,7 @@ $(function(){
       behavior: 'local',
       navSelector: $('nav .pager'),
       nextSelector: $('nav .pager a[rel=next]'),
-      itemSelector: '.activity',
-      animate: true
+      itemSelector: '.activity'
     })
   }
 );
