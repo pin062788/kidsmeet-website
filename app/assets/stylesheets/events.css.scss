@@ -22,7 +22,6 @@
     .activity-box {
       box-sizing: border-box;
       line-height: 1.42857;
-      transition: all .2s ease-in-out 0s;
       box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
       border-radius: 0;
       background-color: white;
@@ -43,7 +42,6 @@
 
       .image-container {
         box-sizing: border-box;
-        transition: all .35s ease-in-out;
         background-color: white;
         border: 1px solid #ddd;
         overflow: hidden;
@@ -56,7 +54,6 @@
         display: block;
         line-height: 1.42857;
         padding: 4px;
-        transition: all .2s ease-in-out 0s;
 
         &:hover {
           border: 1px solid #ff6800;
@@ -94,7 +91,6 @@
 
           a {
             color: #393939;
-            transition: color .3s ease-in-out 0s;
 
             &:hover {
               color: #ff6800;
@@ -385,34 +381,20 @@
   overflow: hidden;
 }
 
-@keyframes zoom-in-image
-{
-  0% {transform: scale(1) }
-  100% {transform: scale(1.2); }
-}
-
-@-moz-keyframes zoom-in-image /* Firefox */
-{
-  0% {transform: scale(1) }
-  100% {transform: scale(1.2); }
-}
-
-@-webkit-keyframes zoom-in-image /* Safari 和 Chrome */
-{
-  0% {transform: scale(1) }
-  100% {transform: scale(1.2); }
-}
-
-@-o-keyframes zoom-in-image /* Opera */
-{
-  0% {transform: scale(1) }
-  100% {transform: scale(1.2); }
+.img-preview {
+  -webkit-transition: all .7s ease-in-out 0s;
+  -moz-transition: all .7s ease-in-out 0s;
+  -o-transition: all .7s ease-in-out 0s;
+  -ms-transition: all .7s ease-in-out 0s;
+  transition: all .7s ease-in-out 0s;
 }
 
 .img-preview:hover {
-  animation:zoom-in-image 1s 1;
-  -webkit-animation:zoom-in-image 1s 1; /* Safari 和 Chrome */
-  transform: scale(1.2);
+  -webkit-transform: scale(1.4);
+  -moz-transform: scale(1.4);
+  -ms-transform: scale(1.4);
+  -o-transform: scale(1.4);
+  transform: scale(1.4);
   -webkit-filter: grayscale(30%);
 }
 
