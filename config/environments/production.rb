@@ -86,6 +86,6 @@ Rails.application.configure do
       :password => ENV['SEND_CLOUD_MAIL_PASSWORD'],
   }
 
-  Paperclip::Attachment.default_options[:url] = "#{CONFIG['image_server']}/:id/:style_:basename.:extension"
+  Paperclip::Attachment.default_options[:url] = "http://kidmeets-images.qiniudn.com/:id/:style_:basename.:extension"
   Paperclip::Attachment.default_options[:path] = ":id/:style_:basename.:extension"
 end
