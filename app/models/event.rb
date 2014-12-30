@@ -36,7 +36,7 @@ class Event < ActiveRecord::Base
   end
 
   def brand_image_url
-    "#{CONFIG['image_server']}/#{main_image.id}/medium_#{main_image.data_file_name}"
+    main_image.try(:data).try(:url, :medium)
   end
 
   def main_image

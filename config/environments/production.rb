@@ -85,4 +85,7 @@ Rails.application.configure do
       :user_name => ENV['SEND_CLOUD_MAIL_USERNAME'],
       :password => ENV['SEND_CLOUD_MAIL_PASSWORD'],
   }
+
+  Paperclip::Attachment.default_options[:url] = "#{CONFIG['image_server']}/:id/:style_:basename.:extension"
+  Paperclip::Attachment.default_options[:path] = ":id/:style_:basename.:extension"
 end
