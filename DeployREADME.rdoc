@@ -13,3 +13,10 @@
 * Create User for kidsmeets
     db.addUser('rouser','rouser',true)
     db.addUser('rwuser','rwuser')
+
+---------------------------------
+* ssh to the node
+* cd /var/www
+* choose the project to be updated and execute 'sudo git pull'
+* sudo service apache2 restart
+
