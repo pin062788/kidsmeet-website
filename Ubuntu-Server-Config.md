@@ -109,3 +109,21 @@
     sudo chmod u+x /opt/config/kidsmeet/ruby_wrapper.sh
     sudo chown $USER:$USER /opt/config/kidsmeet/env.sh
     sudo chmod u+x /opt/config/kidsmeet/env.sh
+
+* Setup Email settings
+
+    * To send email asynchronously by sidekiq, enviroment setup as follows, then sidekiq will monitor the scheduled jobs
+        * install redis
+            - apt-get install redis-server
+        * install sendmail
+           - 'apt-get install sendmail', otherwise rails will throw exception '/usr/sbin/sendmail not founds'
+        * config redis
+            - change the file /etc/redis/redis.conf, change daemonize from 'no' to 'yes'
+        * start resids
+            `/usr/bin/redis-server /etc/redis/redis.conf`
+        * `source /opt/config/kidsmeet/env.sh`
+        * `sudo chown -R $USER:$USER /var/www/kidsmeet.cn/tmp/pids`
+        * `bundle exec sidekiq -d -L log/sidekiq.log -C config/sidekiq.yml -e production`
+        * tail -f log/sidekiq.log
+        * Check sidekiq by webiste /sidekiq
+
