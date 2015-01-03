@@ -9,11 +9,6 @@
 
 * Execute in production environment
     bundle install --deployment
-
-* Create User for kidsmeets
-    db.addUser('rouser','rouser',true)
-    db.addUser('rwuser','rwuser')
-
 ---------------------------------
 * ssh to the node
 * cd /var/www

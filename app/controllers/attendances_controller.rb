@@ -1,26 +1,6 @@
 class AttendancesController < ApplicationController
   before_action :set_attendance, only: [:show, :edit, :update, :destroy]
 
-  # GET /attendances
-  # GET /attendances.json
-  def index
-    @attendances = Attendance.all
-  end
-
-  # GET /attendances/1
-  # GET /attendances/1.json
-  def show
-  end
-
-  # GET /attendances/new
-  def new
-    @attendance = Attendance.new
-  end
-
-  # GET /attendances/1/edit
-  def edit
-  end
-
   # POST /attendances
   # POST /attendances.json
   def join
@@ -40,21 +20,8 @@ class AttendancesController < ApplicationController
         @attendance.user = user
         @attendance.event = event
         if @attendance.save
-
-          #AttendanceMailer.send_email_to_consumers_by_value(@attendance).deliver
-          #AttendanceMailer.send_email_to_agents_by_value(@attendance).deliver
-
-          #if ENV['BACKGROUND_PROCESS']
-          #  AttendanceMailer.delay_for(2.second).send_email_to_consumers_by_value(@attendance)
-          #  AttendanceMailer.delay_for(2.second).send_email_to_agents_by_value(@attendance)
-
-
-            AttendanceMailer.delay_for(2.second).send_email_to_consumers(@attendance.id)
-            AttendanceMailer.delay_for(2.second).send_email_to_agents(@attendance.id)
-          #else
-          #  AttendanceMailer.send_email_to_consumers(@attendance.id).deliver
-          #  AttendanceMailer.send_email_to_agents(@attendance.id).deliver
-          #end
+            AttendanceMailer.delay_for(5.second).send_email_to_consumers(@attendance.id)
+            AttendanceMailer.delay_for(5.second).send_email_to_agents(@attendance.id)
           format.html { redirect_to attendance_event, notice: '感谢您的关注，我们已收到您的报名信息，将尽快联系您！' }
           format.json { render :show, status: :created, location: attendance_event }
         else
@@ -69,31 +36,6 @@ class AttendancesController < ApplicationController
         format.html { redirect_to attendance_event }
       end
       return
-    end
-
-    end
-
-  # PATCH/PUT /attendances/1
-  # PATCH/PUT /attendances/1.json
-  def update
-    respond_to do |format|
-      if @attendance.update(attendance_params)
-        format.html { redirect_to @attendance, notice: 'Attendance was successfully updated.' }
-        format.json { render :show, status: :ok, location: @attendance }
-      else
-        format.html { render :edit }
-        format.json { render json: @attendance.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # DELETE /attendances/1
-  # DELETE /attendances/1.json
-  def destroy
-    @attendance.destroy
-    respond_to do |format|
-      format.html { redirect_to attendances_url, notice: 'Attendance was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 

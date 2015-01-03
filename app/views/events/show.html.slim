@@ -4,11 +4,12 @@
 .row.flex-sm-layout
 
   - if notice
-    .alert.alert-warning.alert-dismissible role="alert"
-      button.close type="button" data-dismiss="alert"
-        span aria-hidden="true" x
-        span.sr-only Close
-      = notice
+    .notice
+      .alert.alert-warning.alert-dismissible role="alert"
+        button.close type="button" data-dismiss="alert"
+          span aria-hidden="true" x
+          span.sr-only Close
+        = notice
 
   .clearfix
 
