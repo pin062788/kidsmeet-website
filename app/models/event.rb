@@ -56,4 +56,8 @@ class Event < ActiveRecord::Base
     json[:url] = "#{CONFIG['domain_name']}/events/#{id}"
     json
   end
+
+  def valuable_items_array
+    valuable_items ? valuable_items.split("\r\n").inject([]) { |result, element| result << element } : nil
+  end
 end

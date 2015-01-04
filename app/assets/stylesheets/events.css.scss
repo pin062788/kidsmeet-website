@@ -248,6 +248,13 @@
 .panel-content {
   padding: 20px;
 
+  h2 {
+    font-size: 22px;
+    border-bottom: 1px dashed #c7c7c7;
+    padding: 0 0 4px 0;
+    margin: 3px 0 10px 0;
+  }
+
   li {
     display: block;
     height: 40px;
@@ -286,6 +293,25 @@
   .row {
     margin-left: 0;
     margin-right: 0;
+  }
+
+  .valuable-items {
+    ul {
+      display: block;
+      list-style-type: disc;
+      -webkit-margin-before: 1em;
+      -webkit-margin-after: 1em;
+      -webkit-margin-start: 0px;
+      -webkit-margin-end: 0px;
+      -webkit-padding-start: 40px;
+      padding: 3px 0 20px;
+      margin: 0;
+      li {
+        display: list-item;
+        height: 21px;
+        text-align: -webkit-match-parent;
+      }
+    }
   }
 }
 
