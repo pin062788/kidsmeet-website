@@ -3,6 +3,7 @@
 
 * Clean Precompile assets and regenerate
     RAILS_ENV=production bundle exec rake assets:clean assets:precompile
+    RAILS_ENV=production bundle exec rake db:migrate
 
 * Execute in dev|production machine
     bundle package
