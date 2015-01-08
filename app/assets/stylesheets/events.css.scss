@@ -110,19 +110,7 @@
           }
 
 
-          .badge {
-            display: inline-block;
-            min-width: 10px;
-            padding: 3px 3px;
-            font-size: 12px;
-            font-weight: bold;
-            line-height: 1;
-            vertical-align: baseline;
-            white-space: nowrap;
-            text-align: center;
-            background-color: transparent;
-            border-radius: 10px;
-          }
+
 
           .label {
             font-size: 70%;
@@ -276,13 +264,21 @@
       font-weight: normal;
     }
 
+    .time_item {
+      font-size: 15px;
+    }
+
     .label-info {
       color: white;
-      font-size: 20px;
+      font-size: 13px;
     }
 
     .badge {
       background-color: #3498db;
+    }
+
+    .attendance_number_item {
+      border-radius: 1.75em
     }
 
     .col-sm-4 {
@@ -304,11 +300,11 @@
       -webkit-margin-start: 0px;
       -webkit-margin-end: 0px;
       -webkit-padding-start: 40px;
-      padding: 3px 0 20px;
+      padding: 3px 0 5px;
       margin: 0;
       li {
         display: list-item;
-        height: 21px;
+        height: 100%;
         text-align: -webkit-match-parent;
       }
     }
@@ -549,3 +545,8 @@
 .sign-up-form .form-group button {
   width: 95%;
 }
+
+.badge {
+  font-size: 12px;
+}
+

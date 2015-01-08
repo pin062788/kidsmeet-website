@@ -90,18 +90,17 @@
                 ul.col-xs-12.col-sm-12.col-md-12
                   - if @event.category
                     li.row
-                      .col-md-4.col-sm-4.col-xs-4 活动时间
-                      .col-md-8.col-sm-8.col-xs-8
-                        span.label #{@event.end_time.strftime('%Y年%m月%d日')}
-                  li.row
-                    .col-md-4.col-sm-4.col-xs-4 报名情况
-                    .col-md-8.col-sm-8.col-xs-8
-                      .label.label-info
-                        i.fa.fa-male
-                        span.badge #{@event.adults_number}
-                        span.separator |
-                        i.fa.fa-child
-                        span.badge #{@event.children_number}
+                      .col-md-12.col-sm-12.col-xs-12
+                        span.label #{l @event.start_time, :format => :date_format}
+                    li.row
+                      .col-md-12.col-sm-12.col-xs-12
+                        span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
+                        .label.label-info.attendance_number_item
+                          i.fa.fa-male
+                          span.badge #{@event.adults_number}
+                          span.separator |
+                          i.fa.fa-child
+                          span.badge #{@event.children_number}
                   - unless @event.contact_phone.blank?
                     li.row
                       .col-md-4.col-sm-4.col-xs-4 联系电话
