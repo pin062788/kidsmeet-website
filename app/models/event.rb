@@ -58,6 +58,6 @@ class Event < ActiveRecord::Base
   end
 
   def valuable_items_array
-    valuable_items ? valuable_items.split("\r\n").inject([]) { |result, element| result << element } : nil
+    valuable_items ? valuable_items.split("\r\n").inject([]) { |result, element| result << element } : []
   end
 end
