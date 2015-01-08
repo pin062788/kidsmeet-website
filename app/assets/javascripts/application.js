@@ -19,3 +19,4 @@
 //= require comments
 //= require share-sns-config
 //= require google-analytics
+//= require header
