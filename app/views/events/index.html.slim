@@ -3,11 +3,6 @@ h1 热门活动
   - @events.each do |event|
     .activity.col-md-4.col-sm-6
       .activity-box
-        /-if event.id == 9
-        /  .registration-full
-        /    = image_tag 'full.png'
-        #share-iterm
-          == render :partial => 'shared/share_sns', :locals => {:info => {:des => "#{event.title}", :pic => "#{event.brand_image_url}", :text => "#{event.abstract}", :id => "#{event.id}"}}
         .image-container
           a href="/events/#{event.id}"
             .wrapper

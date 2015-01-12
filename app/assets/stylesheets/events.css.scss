@@ -275,6 +275,7 @@
 
     .badge {
       background-color: #3498db;
+      font-size: 12px;
     }
 
     .attendance_number_item {
@@ -331,10 +332,15 @@
       display: inline-block;
       border-width: 1px;
       width: 70%;
+
+      &:focus {
+        border-color: #ff6800;
+      }
+
     }
 
     button {
-      width: 70%;
+      width: 95%;
     }
   }
 }
@@ -541,12 +547,3 @@
 .notice .alert-warning{
   background: none repeat scroll 0 0 #ff6800;
 }
-
-.sign-up-form .form-group button {
-  width: 95%;
-}
-
-.badge {
-  font-size: 12px;
-}
-
