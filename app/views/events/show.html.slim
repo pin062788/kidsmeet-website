@@ -47,43 +47,43 @@
         .panel.panel-primary
           .panel-heading 活动详情
           .panel-content
-              .row.more-info
-                ul.col-xs-12.col-sm-12.col-md-12
-                  - if @event.category
-                    li.row
-                      .col-md-12.col-sm-12.col-xs-12
-                        span.label #{l @event.start_time, :format => :date_format}
-                    li.row
-                      .col-md-12.col-sm-12.col-xs-12
-                        span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
-                        .label.label-info.attendance_number_item
-                          i.fa.fa-male
-                          span.badge #{@event.adults_number}
-                          span.separator |
-                          i.fa.fa-child
-                          span.badge #{@event.children_number}
-                  - unless @event.contact_phone.blank?
-                    li.row
-                      .col-md-4.col-sm-4.col-xs-4 联系电话
-                      .col-md-8.col-sm-8.col-xs-8
-                        span.label.label-danger
-                          a#contact-phone href="tel:#{@event.contact_phone}" #{@event.contact_phone}
+            .row.more-info
+              ul.col-xs-12.col-sm-12.col-md-12
+                - if @event.category
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label #{l @event.start_time, :format => :date_format}
+                  li.row
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label.time_item #{l @event.start_time, :format => :time_format} - #{l @event.end_time, :format => :time_format}
+                      .label.label-info.attendance_number_item
+                        i.fa.fa-male
+                        span.badge #{@event.adults_number}
+                        span.separator |
+                        i.fa.fa-child
+                        span.badge #{@event.children_number}
+                - unless @event.contact_phone.blank?
+                  li.row
+                    .col-md-4.col-sm-4.col-xs-4 联系电话
+                    .col-md-8.col-sm-8.col-xs-8
+                      span.label.label-danger
+                        a#contact-phone href="tel:#{@event.contact_phone}" #{@event.contact_phone}
 
-              .row.valuable-items
-                h2 体验包括
-                .col-xs-12
-                  ul
-                    - @event.valuable_items_array.each do |item|
-                      li = item
+            .row.valuable-items
+              h2 体验包括
+              .col-xs-12
+                ul
+                  - @event.valuable_items_array.each do |item|
+                    li = item
 
     - unless @event.is_expired?
-      .row
+      .row#sign-up-from
         col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
           .panel.panel-primary
             .panel-heading 我想体验
             .panel-content
               .sign-up-form
-                = form_for @attendance,:url =>{:controller=>"attendances",:action => "join" } do |f|
+                = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
                 = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
 
                   input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
@@ -121,7 +121,6 @@
                     label
                     button type="submit" class="btn btn-primary" 立刻报名
 
-
     .row
       col-md-12.col-sm-12.col-xs-12.flex-order-2.right-box
         .panel.panel-primary
@@ -142,6 +141,12 @@
     .intro-content
       h3 网友怎么说
     .ds-thread data-thread-key="#{@event.id}" data-title="#{@event.title}" data-url="#{@event.address}"
+
+.scroll-top
+  a href='#main-content'
+    i.fa.fa-arrow-up
+.sign-up-tab
+  a href='#sign-up-from' 我想体验
 
 = javascript_include_tag 'image-carousel'
 
