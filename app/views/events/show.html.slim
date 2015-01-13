@@ -84,8 +84,6 @@
             .panel-content
               .sign-up-form
                 = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
-                = form_for @attendance, :url => {:controller => "attendances", :action => "join"} do |f|
-
                   input type="hidden" name="attendance[event_id]" id="event_id" value=@event.id
 
                   .form-group
@@ -146,7 +144,7 @@
   a href='#main-content'
     i.fa.fa-arrow-up
 .sign-up-tab
-  a href='#sign-up-from' 我想体验
+  a href='#sign-up-from' 立刻报名
 
 = javascript_include_tag 'image-carousel'
 

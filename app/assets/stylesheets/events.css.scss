@@ -319,10 +319,10 @@
     width: 40px;
     height: 135px;
     z-index: 101;
-    bottom: 400px;
-    right: 0;
+    bottom: 300px;
+    right: 35px;
 
-    background-color: rgba(70,179,216,0.9);
+    background-color: #3498db;
     box-sizing: border-box;
 
     padding: 10px;
@@ -333,10 +333,9 @@
     color: #ffffff;
     text-align: center;
 
-    opacity: .7;
     &:hover {
       color: #ffffff;
-      opacity: .9;
+      background-color: #ff6800;
     }
   }
 }
@@ -363,7 +362,7 @@
       width: 70%;
 
       &:focus {
-        border-color: #ff6800;
+        border-color: #3498db;
       }
 
     }
@@ -563,12 +562,13 @@
   }
   .sign-up-tab {
     a {
-      right: 12px;
-      bottom: 12px;
-      width: 60px;
-      height: 60px;
-      font-size: 16px;
+      right: 0px;
+      bottom: 0px;
+      width: 100%;
+      height: 50px;
+      font-size: 20px;
       border-radius: 5px;
+      background-color: #3498db;
     }
   }
 
