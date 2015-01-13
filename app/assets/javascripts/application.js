@@ -20,3 +20,4 @@
 //= require share-sns-config
 //= require google-analytics
 //= require header
+//= require re-arrange-event
