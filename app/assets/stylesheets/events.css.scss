@@ -319,10 +319,10 @@
     width: 40px;
     height: 135px;
     z-index: 101;
-    bottom: 300px;
+    bottom: 278px;
     right: 35px;
 
-    background-color: #6ecded;
+    background-color: #3498db;
     box-sizing: border-box;
 
     padding: 10px;
@@ -341,9 +341,7 @@
 }
 
 .sign-up-form {
-  background: #fffad5;
-  border-top: 2px solid #ffef83;
-  border-bottom: 2px solid #ffef83;
+  border: 2px solid #e8e8e8;
   padding: 20px 0 0 20px;
 
   .form-group {
@@ -543,32 +541,40 @@
       z-index: 1049;
       position: fixed;
       right: 12px;
-      bottom: 84px;
+      bottom: 70px;
       width: 60px;
       height: 60px;
       border-radius: 5px;
-      opacity: .7;
-      background-color: rgba(70,179,216,0.9);
+      background-color: #3498db;
+      opacity: .5;
       font-size: 40px;
       text-align: center;
       padding-bottom: 20px;
       color: #ffffff;
 
       &:hover {
-        opacity: .9;
         color: #ffffff;
+        background-color: #ff6800;
+        opacity: .9;
       }
     }
   }
   .sign-up-tab {
     a {
-      right: 0px;
-      bottom: 0px;
-      width: 100%;
-      height: 50px;
-      font-size: 20px;
+      right: 12px;
+      bottom: 5px;
+      width: 60px;
+      height: 60px;
+      font-size: 16px;
       border-radius: 5px;
-      background-color: #6ecded;
+      opacity: .5;
+      background-color: #3498db;
+
+      &:hover {
+        color: #ffffff;
+        background-color: #ff6800;
+        opacity: .9;
+      }
     }
   }
 
