@@ -11,9 +11,12 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
-gem 'jbuilder', '~> 2.0'
 gem 'slim-rails'
 gem 'font-awesome-rails'
+gem 'bootstrap-sass'
+gem 'bootstrap-sass-extras'
+
+#pagination
 gem 'kaminari', '~> 0.16.1'
 
 #sidekiq
@@ -23,6 +26,7 @@ gem 'sidekiq'
 #paperclip
 gem 'paperclip','3.4.2'
 gem 'paperclip-compression'
+
 
 group :development, :test do
   gem 'annotate'

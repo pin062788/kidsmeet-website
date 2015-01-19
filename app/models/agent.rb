@@ -6,7 +6,7 @@ class Agent < ActiveRecord::Base
   #has_many :upcomings, -> { where( end_time > Time.new).order('id desc').limit(5) }, class_name: "Event"
 
   def has_role?(name)
-    self.roles.where(name: name) .length> 0
+    self.roles.where(name: name).length> 0
   end
 
   def as_json(options = nil)

@@ -29,7 +29,8 @@
     <!-- Page Content -->
     <div class="default-content">
         <div class="container" id="main-content">
-          <%=yield%>
+          <%= bootstrap_flash if flash.any? %>
+          <%= yield %>
         </div>
     </div>
     <%= render("shared/about") %>

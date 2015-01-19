@@ -1,6 +1,5 @@
-// Place all the styles related to the events controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'shared';
+
 .gallery {
   margin: 0 0 50px 0;
   padding: 0;
@@ -8,72 +7,49 @@
 }
 
 .activity-list {
+
   .activity {
     margin-bottom: 5px;
     padding: 0 15px;
     position: relative;
     line-height: 1.42857;
 
-    .registration-full {
-      position: absolute;
-      left: 14px;
-      top: 14px;
-    }
     .activity-box {
       box-sizing: border-box;
       line-height: 1.42857;
       box-shadow: 1px 1px 0 rgba(0,0,0,0.3);
-      border-radius: 0;
+      border-radius: 10px;
       background-color: white;
       border: 1px solid #ddd;
 
       margin-bottom: 20px;
       padding: 20px 20px 40px;
 
-      .abstract {
-        line-height: 18px;
-        max-height: 120px;
-        display: block;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        color: #777;
-        border: 1px;
-      }
-
       .image-container {
         box-sizing: border-box;
         background-color: white;
         border: 1px solid #ddd;
         overflow: hidden;
-
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
         border-radius: 3px;
         display: block;
         line-height: 1.42857;
         padding: 4px;
 
         &:hover {
-          border: 1px solid #ff6800;
+          border: 1px solid $primary-color;
         }
-      }
 
-      .a .img{
-        padding-left: 3px;
-        padding-right: 3px;
-      }
+        .a {
+          .wrapper {
+            position: relative;
+            overflow: hidden;
+          }
 
-      pre {
-        overflow-y: hidden;
-        height: 130px;
-        white-space: pre-wrap;
-        white-space: -moz-pre-wrap;/* css-3 */
-        white-space: -pre-wrap;/* Mozilla, since 1999 */
-        white-space: -o-pre-wrap;/* Opera 4-6 */
-        word-wrap: break-word;/* Opera 7 */
-        /* Internet Explorer 5.5+ */
+          .img{
+            padding-left: 3px;
+            padding-right: 3px;
+          }
+        }
       }
 
       .info-box{
@@ -90,36 +66,16 @@
           line-height: 26px;
 
           a {
-            color: #393939;
-
+            color: $font-color;
             &:hover {
-              color: #ff6800;
+              color: $primary-color;
               text-decoration: none;
             }
-          }
-        }
-
-        .item{
-          padding-right: 5px;
-          margin-bottom: 10px;
-          margin-right: 6px;
-
-          span.separator {
-            margin-right: 5px;
-            margin-left: 5px;
-          }
-
-
-
-
-          .label {
-            font-size: 70%;
           }
         }
       }
     }
   }
-
 }
 
 .activity-detail .info-box {
@@ -430,10 +386,6 @@
   color:#ffffff
 }
 
-.wrapper {
-  position: relative;
-  overflow: hidden;
-}
 
 .img-preview {
   -webkit-transition: all .7s ease-in-out 0s;
