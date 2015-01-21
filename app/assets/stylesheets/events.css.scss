@@ -564,6 +564,8 @@
   }
 }
 
-.notice .alert-warning{
-  background: none repeat scroll 0 0 #ff6800;
+.alert-success{
+  background: none repeat scroll 0 0 $primary-color;
+  border-width: 0px;
+  margin-top: 10px;
 }
