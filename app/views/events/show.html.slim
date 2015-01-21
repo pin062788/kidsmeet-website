@@ -53,19 +53,25 @@
                         span.separator |
                         i.fa.fa-child
                         span.badge #{@event.children_number}
-                - unless @event.contact_phone.blank?
+
+                - if @event.address.present?
                   li.row
-                    .col-md-4.col-sm-4.col-xs-4 联系电话
-                    .col-md-8.col-sm-8.col-xs-8
+                    .col-md-12.col-sm-12.col-xs-12
+                      span.label.label-alert #{@event.address}
+
+                - if @event.contact_phone.present?
+                  li.row
+                    .col-md-9.col-sm-9.col-xs-9
                       span.label.label-danger
                         a#contact-phone href="tel:#{@event.contact_phone}" #{@event.contact_phone}
+
 
             .row.valuable-items
               h2 体验包括
               .col-xs-12
                 ul
                   - @event.valuable_items_array.each do |item|
-                    li = item
+                    li = item.html_safe
 
     - unless @event.is_expired?
       .row#sign-up-from
