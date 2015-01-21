@@ -199,8 +199,13 @@
 }
 
 
-.label-danger a#contact-phone {
-  color:#ffffff
+.label-danger  {
+
+  a#contact-phone {
+    color:#ffffff;
+  }
+
+  background-color: $primary-color;
 }
 
 
@@ -308,7 +313,7 @@
 
       &:hover {
         color: #ffffff;
-        background-color: #ff6800;
+        background-color: $primary-color;
         opacity: .9;
       }
     }
