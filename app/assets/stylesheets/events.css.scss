@@ -33,7 +33,7 @@
     .more-info {
       border: 3px solid #e8e8e8;
       margin: 0px 20px 20px 0px;
-      padding: 25px 20px 0;
+      padding: 25px 0 0;
       text-align: center;
       max-height: 270px;
       overflow: hidden;
@@ -44,6 +44,11 @@
         color: #000000;
         font-size: 20px;
         font-weight: normal;
+        white-space:normal;
+      }
+
+      .attendance_number_item {
+        white-space: nowrap;
       }
 
       .time_item {
@@ -61,6 +66,10 @@
       }
 
       .col-sm-4 {
+        padding: 0;
+      }
+
+      ul {
         padding: 0;
       }
     }
@@ -126,9 +135,11 @@
     color: #ffffff;
     text-align: center;
 
+    opacity: 0.8;
+
     &:hover {
       color: #ffffff;
-      background-color: $primary-color;
+      opacity: 1;
     }
   }
 }
@@ -313,7 +324,6 @@
 
       &:hover {
         color: #ffffff;
-        background-color: $primary-color;
         opacity: .9;
       }
     }
@@ -331,7 +341,6 @@
 
       &:hover {
         color: #ffffff;
-        background-color: $primary-color;
         opacity: .9;
       }
     }
