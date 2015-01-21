@@ -35,7 +35,7 @@
       margin: 0px 20px 20px 0px;
       padding: 25px 0 0;
       text-align: center;
-      max-height: 270px;
+      max-height: 300px;
       overflow: hidden;
 
       font-size: 14px;
@@ -75,6 +75,8 @@
     }
 
     .row {
+      height: auto;
+      padding: 10px 0;
       margin-left: 0;
       margin-right: 0;
     }
