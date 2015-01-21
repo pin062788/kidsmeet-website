@@ -7,6 +7,6 @@ $(function(){
       navSelector: $('nav .pager'),
       nextSelector: $('nav .pager a[rel=next]'),
       itemSelector: '.activity'
-    })
+    });
   }
 );
