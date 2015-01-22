@@ -15,7 +15,6 @@
 //= require jquery.jcarousel.min
 //= require jquery.jscroll.min
 //= require bootstrap.min
-//= require turbolinks
 //= require comments
 //= require share-sns-config
 //= require google-analytics
