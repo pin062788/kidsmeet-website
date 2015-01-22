@@ -112,3 +112,41 @@ a {
     width: 15px;
   }
 }
+
+.main-carousel {
+  .jcarousel li img {
+    max-height: 474px;
+    max-width: 100%;
+  }
+
+  .jcarousel-pagination {
+    bottom: 15px;
+    width: 100%;
+    text-align: left;
+    padding-left: 50px;
+
+    a {
+      border-radius: 5px;
+      background: 0;
+      border: 1px solid #fff;
+      color: #fff;
+      text-indent: 0;
+      padding: 8px 14px;
+      margin: 2px;
+      width: auto;
+      height: auto;
+      transition: background-color .3s ease-in-out 0s;
+      box-shadow: none;
+
+      &:hover {
+        background: rgba(255,255,255,0.6);
+        color: #000;
+      }
+    }
+
+    .active {
+      background: rgba(255,255,255,0.6);
+      color: #000;
+    }
+  }
+}

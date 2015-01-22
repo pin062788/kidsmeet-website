@@ -20,3 +20,4 @@
 //= require google-analytics
 //= require header
 //= require re-arrange-event
+//= require image-carousel

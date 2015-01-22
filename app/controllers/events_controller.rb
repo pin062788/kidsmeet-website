@@ -5,12 +5,12 @@ class EventsController < ApplicationController
   # GET /events.json
   def index
     @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
+    @images = @events.first(5).map(&:main_image)
   end
 
   def upcomings
     @events = Event.where("end_time >= ?", Time.new).order('created_at DESC').page params[:page]
     @menu_item = 'upcomings'
-    render :template => "events/index", :events => @events
   end
 
   def history
