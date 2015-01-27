@@ -85,15 +85,15 @@
 
                   .form-group
                     label for="username" 姓名*
-                    input type="text" required="true" x-moz-errormessage="请输入您的真实姓名" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
+                    input type="text" class="form-control" id="username" placeholder="请输入您的真实姓名" name="attendance[username]"
 
                   .form-group
                     label for="phone_number" 手机号*
-                    input type="text" minlength="11" maxlength="11" required="true" placeholder="手机号将作为登陆账号" x-moz-errormessage="请输入合法的11位手机号(例如: 13512341234" name="attendance[phone_number]" pattern="^[0-9]+$" id="phone_number" class="form-control"
+                    input type="text" placeholder="手机号将作为登陆账号" name="attendance[phone_number]" id="phone_number" class="form-control"
 
                   .form-group
                     label for="email" 电子邮箱*
-                    input type="email" placeholder="通知会发送邮件" required="true" maxlength="50" x-moz-errormessage="请输入合法的电子邮件地址(例如: example@example.com)" pattern="^([A-Za-z0-9_\-\.])+\@(?!(?:[A-Za-z0-9_\-\.]+\.)?([A-Za-z]{2,4})\.\2)([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$" class="form-control" id="email" name="attendance[email]"
+                    input type="email" placeholder="通知会发送邮件" class="form-control" id="email" name="attendance[email]"
 
                   .form-group
                     label for="adults_number" 成人数量
